@@ -1,5 +1,0 @@
-E:\C#知识库\DataCenter\ConsoleApplication1\obj\Debug\ResolveAssemblyReference.cache
-E:\C#知识库\DataCenter\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
-E:\C#知识库\DataCenter\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
-E:\C#知识库\DataCenter\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
-E:\C#知识库\DataCenter\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
