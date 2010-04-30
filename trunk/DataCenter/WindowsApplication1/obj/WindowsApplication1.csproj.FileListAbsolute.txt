@@ -1,7 +1,0 @@
-E:\C#知识库\DataCenter\WindowsApplication1\bin\Debug\WindowsApplication1.exe
-E:\C#知识库\DataCenter\WindowsApplication1\bin\Debug\WindowsApplication1.pdb
-E:\C#知识库\DataCenter\WindowsApplication1\obj\Debug\ResolveAssemblyReference.cache
-E:\C#知识库\DataCenter\WindowsApplication1\obj\Debug\WindowsApplication1.Properties.Resources.resources
-E:\C#知识库\DataCenter\WindowsApplication1\obj\Debug\WindowsApplication1.csproj.GenerateResource.Cache
-E:\C#知识库\DataCenter\WindowsApplication1\obj\Debug\WindowsApplication1.exe
-E:\C#知识库\DataCenter\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
