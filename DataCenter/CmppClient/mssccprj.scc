@@ -1,9 +1,0 @@
-SCC = This is a Source Code Control file
-
-[CmppClient.csproj]
-SCC_Aux_Path = "D:\Program Files\Microsoft Visual Studio\Common\VSS"
-SCC_Project_Name = "$/DataCenter.root/CmppClient", NCBAAAAA
-
-[DataCenter.sln]
-SCC_Aux_Path = "\\192.168.0.18\vss\"
-SCC_Project_Name = "$/DataCenter.root/CmppClient", YJEAAAAA
