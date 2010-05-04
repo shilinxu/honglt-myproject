@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmppClient", "CmppClient\CmppClient.csproj", "{537ACA76-A9D8-4E7C-9F1A-00217FB2FC99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{0DEB895A-2B3B-41B8-9337-4EE288D80951}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsApplication1", "WindowsApplication1\WindowsApplication1.csproj", "{A2E93F7B-C125-4B2A-B8CB-4787B8234FAA}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CmppClient\\CmppClient.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = CmppClient\\
+		SccProjectUniqueName2 = ConsoleApplication1\\ConsoleApplication1.csproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = ConsoleApplication1\\
+		SccProjectUniqueName3 = WindowsApplication1\\WindowsApplication1.csproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = WindowsApplication1\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{537ACA76-A9D8-4E7C-9F1A-00217FB2FC99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{537ACA76-A9D8-4E7C-9F1A-00217FB2FC99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{537ACA76-A9D8-4E7C-9F1A-00217FB2FC99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{537ACA76-A9D8-4E7C-9F1A-00217FB2FC99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DEB895A-2B3B-41B8-9337-4EE288D80951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DEB895A-2B3B-41B8-9337-4EE288D80951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DEB895A-2B3B-41B8-9337-4EE288D80951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DEB895A-2B3B-41B8-9337-4EE288D80951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E93F7B-C125-4B2A-B8CB-4787B8234FAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E93F7B-C125-4B2A-B8CB-4787B8234FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E93F7B-C125-4B2A-B8CB-4787B8234FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E93F7B-C125-4B2A-B8CB-4787B8234FAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
