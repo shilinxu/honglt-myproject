@@ -1,5 +1,0 @@
-EXPORTS
-Create=?Create@@YAPAVCChannel@@HPBD@Z
-XPageSettings=?XPageSettings@@YAPAVCSettingsPage@@XZ
-XPageProfiles=?XPageProfiles@@YAPAVCSettingsPage@@PAVCXMLElement@@@Z
-ConvertFrom=?ConvertFrom@CNotifyChannel@@SAPAVCChannel@@PAV2@PBD@Z

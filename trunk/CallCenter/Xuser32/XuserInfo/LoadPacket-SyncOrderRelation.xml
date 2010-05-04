@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<SyncOrderRelation method="home" text="游客111">
-<SyncOrder id="xinf01010100001" text="直线电话">XinnerJoin</SyncOrder>
-<SyncOrder id="xinf01010100002" text="营销代表1">XsalesAgency11</SyncOrder>
-<SyncOrder id="xinf01010100003" text="用户基本信息、密码、信箱管理等">XuserInfo</SyncOrder>
-<SyncOrder id="xinf99999999999" text="班长席，在线监测终端运行状态">Xmonitor</SyncOrder>
-</SyncOrderRelation>

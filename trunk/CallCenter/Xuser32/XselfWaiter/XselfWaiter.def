@@ -1,8 +1,0 @@
-; XselfWaiter.def : Declares the module parameters for the DLL.
-
-LIBRARY      "XselfWaiter"
-DESCRIPTION  'XselfWaiter Windows Dynamic Link Library'
-
-EXPORTS
-    ; Explicit exports can go here
-	Create=?Create@@YAPAVCChildWnd@@PAVCXMLElement@@PAVCWindowManager@@@Z

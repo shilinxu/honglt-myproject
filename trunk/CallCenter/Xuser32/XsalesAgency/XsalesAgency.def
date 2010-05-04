@@ -1,8 +1,0 @@
-; XsalesAgency.def : Declares the module parameters for the DLL.
-
-LIBRARY      "XsalesAgency"
-DESCRIPTION  'XsalesAgency Windows Dynamic Link Library'
-
-EXPORTS
-    ; Explicit exports can go here
-	Create=?Create@@YAPAVCChildWnd@@PAVCXMLElement@@PAVCWindowManager@@@Z

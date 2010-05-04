@@ -1,8 +1,0 @@
-EXPORTS
-Create=?Create@@YAPAVCChannel@@HPBD@Z
-XPageSettings=?XPageSettings@@YAPAVCSettingsPage@@XZ
-XPageProfiles=?XPageProfiles@@YAPAVCSettingsPage@@PAVCXMLElement@@@Z
-ConvertFrom=?ConvertFrom@CPlayChannel@@SAPAVCChannel@@PAV2@PBD@Z
-ConvertPager=?ConvertPager@CPlayChannel@@SAPAVCChannel@@PAV2@PBDH@Z
-PagerFrom=?PagerFrom@CPagerChannel@@SAPAVCChannel@@PAV2@PBD1K@Z
-LookOut=?LookOut@@YAPAVCChannel@@PBD0@Z
