@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<SyncDataView method="select top 100" hKey="0x10000000">
-<column_expression>a.jsjbh, b.xphone, c.xfeename, c.xtalktype, xtimestart=convert(varchar(19),a.xtimestart,120), a.xtimelength, xexpense=str(a.xexpense,5,2), a.xthirdid</column_expression>
-<table_name>from xuserdetail a inner join xuser b on a.xuserbindid = b.xuserbindid inner join xfeetable c on a.xfeetableid = c.xjsjbh</table_name>
-<search_condition>b.xphone = '13867877813'</search_condition>
-<order_by_expression>a.jsjbh desc</order_by_expression>
-</SyncDataView>

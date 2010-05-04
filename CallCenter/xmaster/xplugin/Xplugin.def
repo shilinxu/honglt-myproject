@@ -1,8 +1,0 @@
-; Xplugin.def : Declares the module parameters for the DLL.
-
-;LIBRARY      "Xplugin"
-DESCRIPTION  'Xplugin Windows Dynamic Link Library'
-
-EXPORTS
-    ; Explicit exports can go here
-	ActiveMasterFee=?ActiveMasterFee@@YAHPBD0G@Z

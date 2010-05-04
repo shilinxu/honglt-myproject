@@ -1,9 +1,0 @@
-SCC = This is a Source Code Control file
-
-[Xuser32.dsp]
-SCC_Aux_Path = "\\192.168.0.17\vss\"
-SCC_Project_Name = "$/CallCenter/Xuser32", HKDAAAAA
-
-[Xuser32.dsw]
-SCC_Aux_Path = "\\192.168.0.17\vss\"
-SCC_Project_Name = "$/CallCenter/Xuser32", HKDAAAAA

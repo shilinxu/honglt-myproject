@@ -1,8 +1,0 @@
-; Xmonitor.def : Declares the module parameters for the DLL.
-
-LIBRARY      "Xmonitor"
-DESCRIPTION  'Xmonitor Windows Dynamic Link Library'
-
-EXPORTS
-    ; Explicit exports can go here
-	Create=?Create@@YAPAVCChildWnd@@PAVCXMLElement@@PAVCWindowManager@@@Z
