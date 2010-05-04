@@ -1,0 +1,214 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "Resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "Resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_LINERFRAME          ICON    DISCARDABLE     "Res\\china.ico"
+IDI_EMPLOYEE            ICON    DISCARDABLE     "res\\Employee.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_PANEL_MARK          BITMAP  MOVEABLE PURE   "Res\\PanelMark.bmp"
+IDB_MENUBAR             BITMAP  MOVEABLE PURE   "Res\\MenuBar.bmp"
+IDR_DTMFBAR             BITMAP  DISCARDABLE     "res\\dtmfbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// HTML
+//
+
+IDR_XML_DEFINITIONS     HTML    MOVEABLE PURE   "Res\\Definitions.xml"
+IDR_XML_DEFAULT         HTML    MOVEABLE PURE   "Res\\Default.xml"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDR_WAVE_RING           WAVE    DISCARDABLE     "Res\\Ring.wav"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DTMF
+//
+
+IDR_DTMF_SIGNAL         DTMF    DISCARDABLE     "Res\\signal.dtmf"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_DTMFBAR TOOLBAR DISCARDABLE  8, 9
+BEGIN
+    BUTTON      ID_DTMF_ONE
+    BUTTON      ID_DTMF_TWO
+    BUTTON      ID_DTMF_THREE
+    BUTTON      ID_DTMF_FOUR
+    BUTTON      ID_DTMF_FIVE
+    BUTTON      ID_DTMF_SIX
+    BUTTON      ID_DTMF_SEVEN
+    BUTTON      ID_DTMF_EIGHT
+    BUTTON      ID_DTMF_NINE
+    BUTTON      ID_DTMF_ZERO
+    SEPARATOR
+    BUTTON      ID_DTMF_STAR
+    BUTTON      ID_DTMF_WELL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_USER_MEETING DIALOG DISCARDABLE  0, 0, 272, 139
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "我的电话会议"
+FONT 8, "Tahoma"
+BEGIN
+    DEFPUSHBUTTON   "申请房间",IDOK,201,45,57,14
+    PUSHBUTTON      "注销会议",IDCANCEL,201,65,57,14
+    ICON            IDI_EMPLOYEE,IDC_STATIC,7,7,20,20
+    LTEXT           "我的分类:",IDC_STATIC,30,11,36,13,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_WHITERECT | SS_SUNKEN | NOT 
+                    WS_VISIBLE,7,30,258,1
+    COMBOBOX        IDC_GROUP,83,12,108,70,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_EDITLABELS | WS_BORDER | 
+                    WS_TABSTOP,7,31,184,101
+    PUSHBUTTON      "我的成员",IDC_MEMBER,201,11,57,15
+    PUSHBUTTON      "删除",IDC_DELETE,201,102,57,15,WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_USER_MEETING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 265
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 132
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_LINERFRAME          "直线电话"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_NETWORK_CONNECT     "连接"
+    IDS_NETWORK_CONNECTING  "正在连接(通话)中..."
+    IDS_NETWORK_CONNECTED   "已连接"
+    IDS_NETWORK_DISCONNECT  "断开连接"
+    IDS_NETWORK_RINGING     "有电话呼入..."
+    IDS_WELCOME             "欢迎使用！"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NETWORK_CONNECT      "连接到网络。"
+    ID_NETWORK_DISCONNECT   "从网络断开。"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INNER_REFRESH        "刷新。"
+    ID_USER_MEETING         "电话会议。"
+    ID_INNER_REPLY          "创建会话。"
+    ID_SEARCH_QUICK         "查找号码。"
+    ID_SEARCH_GROUP         "查找通信录。"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_QUITPROMPT          "注销此会议将导致终端不能继续工作, \n\t确认注销吗?"
+    IDS_ERROR_DATABASE      "数据加载失败，请检查网络设置，或联系网络管理员！"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

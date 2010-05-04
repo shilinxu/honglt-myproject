@@ -1,0 +1,61 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: XLiveUpdate - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/LiveUpdate.res" /d "_DEBUG" /d "_AFXDLL" "E:\VC知识库\CallCenter\XLiveUpdate\LiveUpdate.rc"" 
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSPF.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/XLiveUpdate.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\VC知识库\CallCenter\Common\buffer.cpp"
+"E:\VC知识库\CallCenter\XLiveUpdate\LiveUpdate.cpp"
+"E:\VC知识库\CallCenter\XLiveUpdate\VersionChecker.cpp"
+"E:\VC知识库\CallCenter\XLiveUpdate\WizardCheckerPage.cpp"
+"E:\VC知识库\CallCenter\XLiveUpdate\WizardFailedPage.cpp"
+"E:\VC知识库\CallCenter\XLiveUpdate\WizardFinishedPage.cpp"
+"E:\VC知识库\CallCenter\XLiveUpdate\WizardNothingPage.cpp"
+"E:\VC知识库\CallCenter\XLiveUpdate\WizardSheet.cpp"
+"E:\VC知识库\CallCenter\XLiveUpdate\WizardUpdatePage.cpp"
+"E:\VC知识库\CallCenter\XLiveUpdate\WizardWelcomePage.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSPF.tmp" 
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP10.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/XLiveUpdate.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\VC知识库\CallCenter\XLiveUpdate\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP10.tmp" 
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP11.tmp" with contents
+[
+version.lib Ws2_32.lib wininet.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/XLiveUpdate.pdb" /debug /machine:I386 /out:"../XLiveUpdate.exe" /pdbtype:sept /libpath:"ShCti" 
+".\Debug\buffer.obj"
+".\Debug\LiveUpdate.obj"
+".\Debug\StdAfx.obj"
+".\Debug\VersionChecker.obj"
+".\Debug\WizardCheckerPage.obj"
+".\Debug\WizardFailedPage.obj"
+".\Debug\WizardFinishedPage.obj"
+".\Debug\WizardNothingPage.obj"
+".\Debug\WizardSheet.obj"
+".\Debug\WizardUpdatePage.obj"
+".\Debug\WizardWelcomePage.obj"
+".\Debug\LiveUpdate.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP11.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+
+
+E:\VC知识库\CallCenter\XLiveUpdate\LiveUpdate.rc (172): error RC2135 : file not found: Res\products.bmp
+Error executing rc.exe.
+
+
+
+<h3>Results</h3>
+XLiveUpdate.exe - 1 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

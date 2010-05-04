@@ -1,0 +1,510 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SPLASH DIALOGEX 0, 0, 292, 39
+STYLE WS_POPUP | WS_CLIPCHILDREN
+FONT 8, "Tahoma", 0, 0, 0x1
+BEGIN
+END
+
+IDD_CONNECT DIALOG DISCARDABLE  0, 0, 227, 201
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "用户登录"
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         104,IDC_STATIC,"Static",SS_BITMAP,7,7,213,85
+    LTEXT           "用户名(&U):",IDC_STATIC,17,78,38,13,SS_CENTERIMAGE
+    COMBOBOX        IDC_USER_ID,65,78,148,53,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "密码(&P):",IDC_STATIC,25,96,29,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_PASSWORD,65,97,147,13,ES_PASSWORD | ES_AUTOHSCROLL
+    CONTROL         "记住我的密码(&S)",IDC_SAVE_PASSWORD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,65,115,73,12
+    CONTROL         "",IDC_STATIC,"Static",SS_WHITERECT | SS_SUNKEN,5,132,
+                    217,1
+    DEFPUSHBUTTON   "登录(&C)",IDRETRY,19,141,55,15
+    PUSHBUTTON      "取消",IDCANCEL,78,141,55,15
+    PUSHBUTTON      "高级设置(&O)",IDC_SETTINGS,153,140,60,14
+    GROUPBOX        "服务器:",IDC_REMOTE,5,163,217,33,WS_GROUP
+    LTEXT           "地址(&H):",IDC_STATIC,24,176,30,13,SS_CENTERIMAGE | NOT 
+                    WS_GROUP
+    COMBOBOX        IDC_HOST,65,176,83,70,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "端口:",IDC_STATIC,153,177,20,12,SS_CENTERIMAGE | NOT 
+                    WS_GROUP
+    EDITTEXT        IDC_PORT,178,176,36,13,ES_AUTOHSCROLL | ES_NUMBER
+END
+
+IDD_SETTINGS_VIDEO DIALOG DISCARDABLE  0, 0, 270, 198
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "视频设备"
+FONT 8, "Tahoma"
+BEGIN
+    LTEXT           "视频输入:",-1,17,18,38,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_VIDEO_INPUT,62,18,128,90,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "视频设置",-1,5,5,259,34,WS_GROUP
+    PUSHBUTTON      "视频属性",IDC_VIDEO_PROPERTY,195,16,61,15
+    CONTROL         "",IDC_VIDEO_FRAME,"Static",SS_BLACKFRAME,5,42,259,149
+END
+
+IDD_SETTINGS_NETWORK DIALOG DISCARDABLE  0, 0, 270, 139
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "网络"
+FONT 8, "Tahoma"
+BEGIN
+    GROUPBOX        "监听",IDC_STATIC,5,5,259,33
+    LTEXT           "地址:",IDC_STATIC,17,18,20,12,SS_CENTERIMAGE
+    LTEXT           "端口:",IDC_STATIC,153,18,20,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_PORT,192,18,66,12,ES_AUTOHSCROLL | ES_NUMBER
+    COMBOBOX        IDC_HOST,61,18,83,70,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "图象传输",IDC_STATIC,5,41,259,33
+    LTEXT           "每帧速率:",IDC_STATIC,17,54,36,12,SS_CENTERIMAGE
+    LTEXT           "最大报文:",IDC_STATIC,153,54,36,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_MAX_RATE,61,54,83,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_MAX_PACKET,192,54,66,12,ES_AUTOHSCROLL | ES_NUMBER
+END
+
+IDD_SETTINGS_GENERAL DIALOG DISCARDABLE  0, 0, 270, 46
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "常规"
+FONT 8, "Tahoma"
+BEGIN
+    LTEXT           "服务器:",-1,17,18,38,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_HOST,62,18,83,90,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "数据库:",-1,153,18,28,12,SS_CENTERIMAGE
+    GROUPBOX        "数据库",-1,5,5,259,33,WS_GROUP
+    COMBOBOX        IDC_DATABASE,192,18,66,90,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SETTINGS_AUDIO DIALOG DISCARDABLE  0, 0, 270, 81
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "音频设备"
+FONT 8, "Tahoma"
+BEGIN
+    LTEXT           "音频输入:",IDC_STATIC,17,18,38,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_AUDIO_INPUT,62,18,194,90,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "音频设置",IDC_STATIC,5,5,259,57,WS_GROUP
+    LTEXT           "音频输出:",IDC_STATIC,17,34,38,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_AUDIO_OUTPUT,62,34,194,90,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_ABOUT DIALOGEX 0, 0, 292, 148
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 96031城市总机"
+FONT 8, "Tahoma", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,246,127,39,14
+    CONTROL         178,IDC_STATIC,"Static",SS_BITMAP,0,0,367,31
+    LTEXT           "城市总机工作站 中北通信96031特别版",IDC_TITLE,20,45,262,
+                    10,SS_CENTERIMAGE
+    LTEXT           "Copyright ?ZBTX Soft Development Team, 2002-2004.",
+                    IDC_STATIC,20,60,262,12
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,19,82,138,32
+    LTEXT           "http://www.96031.com.cn",IDC_WEB,51,86,90,10
+    LTEXT           "hong_lt@163.com",IDC_MAIL,51,99,90,10
+    LTEXT           "Email:",IDC_STATIC,25,99,20,8
+    LTEXT           "URL:",IDC_STATIC,25,87,16,8
+    LTEXT           "XXXX\nXXXX",IDC_REGISTRY,162,82,123,32,0,
+                    WS_EX_CLIENTEDGE
+END
+
+IDD_JOINVISITOR DIALOGEX 0, 0, 297, 115
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "呼出请求"
+FONT 8, "Tahoma"
+BEGIN
+    DEFPUSHBUTTON   "呼出/接听",IDOK,146,89,57,14
+    PUSHBUTTON      "挂机(&C)",IDCANCEL,224,89,57,14
+    ICON            IDR_MAINFRAME,IDC_STATIC,128,3,21,20
+    LTEXT           "正在联系对方...",IDC_STATIC,152,7,139,13,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_WHITERECT | SS_SUNKEN,128,26,
+                    164,1
+    LTEXT           "对方号码(&R):",IDC_STATIC,144,41,46,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_REMITE_ID,204,41,87,13,ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_NUMBER
+    LTEXT           "通话时长(&N):",IDC_STATIC,144,57,46,13,SS_CENTERIMAGE
+    CONTROL         "",IDC_PLACEHOLDER,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,1,0,126,115
+    LTEXT           "00:00:00",IDC_LENGTH,204,57,87,13,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_PRODUCTS            BITMAP  MOVEABLE PURE   "Res\\products.bmp"
+IDB_PANEL_MARK          BITMAP  MOVEABLE PURE   "Res\\PanelMark.bmp"
+IDB_CONNECT             BITMAP  MOVEABLE PURE   "Res\\connect.bmp"
+IDB_TASKPANEL_FOOTER    BITMAP  MOVEABLE PURE   "Res\\TaskPanelFooter.bmp"
+IDB_TASKBOX_CAPTION     BITMAP  MOVEABLE PURE   "Res\\TaskBoxCaption.bmp"
+IDB_BANNER_MARK         BITMAP  MOVEABLE PURE   "Res\\BannerMark.bmp"
+IDB_MENUBAR             BITMAP  MOVEABLE PURE   "Res\\MenuBar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_SPLASH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 285
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 32
+    END
+
+    IDD_CONNECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_SETTINGS_VIDEO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 191
+    END
+
+    IDD_SETTINGS_NETWORK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 132
+    END
+
+    IDD_SETTINGS_GENERAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_SETTINGS_AUDIO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 74
+    END
+
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 285
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 141
+    END
+
+    IDD_JOINVISITOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 290
+        BOTTOMMARGIN, 108
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "Res\\Xuser32.ico"
+IDI_CONNECT             ICON    DISCARDABLE     "Res\\Connect.ico"
+IDR_HOMEFRAME           ICON    DISCARDABLE     "Res\\Home.ico"
+IDI_TASKPANEL           ICON    DISCARDABLE     "Res\\TaskPanel.ico"
+IDR_MUSICFRAME          ICON    DISCARDABLE     "Res\\Music.ico"
+IDR_TRAFFICFRAME        ICON    DISCARDABLE     "Res\\Traffic.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "工具(&T)"
+    BEGIN
+        MENUITEM "选项(&O)...",                 ID_TOOLS_SETTINGS
+    END
+    POPUP "窗口(&W)"
+    BEGIN
+        MENUITEM "工具栏(&T)",                  ID_WINDOW_TOOLBAR
+        MENUITEM "状态栏(&S)",                  ID_WINDOW_STATUS_BAR
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "检查产品更新信息(&U)...",     ID_HELP_UPDATE
+        MENUITEM SEPARATOR
+        MENUITEM "关于 96031城市总机(&A)",      ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_HAND                CURSOR  DISCARDABLE     "Res\\Hand.cur"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,906,100
+ PRODUCTVERSION 1,0,906,100
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "城市热线工作站\0"
+            VALUE "FileVersion", "1, 0, 906, 100\0"
+            VALUE "InternalName", "Xuser32\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2005\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Xuser32.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Xuser32\0"
+            VALUE "ProductVersion", "1, 0, 906, 100\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+IDR_MANIFEST            24      DISCARDABLE     "Res\\manifest.xml"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SETTINGS_VIDEO DLGINIT
+BEGIN
+    IDC_VIDEO_INPUT, 0x403, 9, 0
+0xfbbd, 0xc3d3, 0xd3ca, 0xb5c6, "\000" 
+    0
+END
+
+IDD_SETTINGS_NETWORK DLGINIT
+BEGIN
+    IDC_HOST, 0x403, 5, 0
+0xd4d7, 0xafb6, "\000" 
+    0
+END
+
+IDD_SETTINGS_GENERAL DLGINIT
+BEGIN
+    IDC_HOST, 0x403, 2, 0
+0x002e, 
+    IDC_DATABASE, 0x403, 11, 0
+0x6143, 0x6c6c, 0x6543, 0x746e, 0x7265, "\000" 
+    0
+END
+
+IDD_CONNECT DLGINIT
+BEGIN
+    IDC_HOST, 0x403, 2, 0
+0x002e, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// HTML
+//
+
+IDR_XML_DEFINITIONS     HTML    MOVEABLE PURE   "Res\\Definitions.xml"
+IDR_XML_DEFAULT         HTML    MOVEABLE PURE   "Res\\Default.xml"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "城市热线工作站"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NETWORK_CONNECT      "登录远端网关。"
+    ID_TRAFFIC_ACCEPT       "接听或外呼远端用户。"
+    ID_TRAFFIC_REJECT       "断开与远端用户的连接。"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_HOMEFRAME           "首页"
+    IDR_TRAFFICFRAME        "会话"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和版权"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_HELP_UPDATE          "在线升级相关程序、配置"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_NETWORK_CONNECT     "连接服务器"
+    IDS_NETWORK_CONNECT_NOUSER 
+                            "连接服务器失败，原因可能是密码错误！错误代码= %i"
+    IDS_NETWORK_CONNECT_ERROR 
+                            "连接远端服务器错误，请检查硬件连接情况！错误代码=%i"
+    IDS_NETWORK_CONNECT_DROPED 
+                            "远端服务器被异常断开，请检查硬件连接情况！地址=%s"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TOOLS_SETTINGS       "参数设置"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SETTINGS            "设置"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TAB_HOME             "欢迎使用96031城市总机工作站。"
+    ID_TAB_CONNECT          "启动网络连接。"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_TOOLBAR       "显示或隐藏工具栏。"
+    ID_WINDOW_STATUS_BAR    "显示或隐藏状态栏。"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_QUITPROMPT          "退出此程序将导致终端不能继续工作, \n\t确认退出吗?"
+    IDS_ERROR_NOJOB         "无法创建业务模型，可能该业务不存在，或已过期，请检查！"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<SyncDataView method="select top 100" hKey="0x10000000">
+<column_expression>xPCMName, xRecDate=convert(varchar(19),xRecDate,120), xCaller, xTheState, xjsjbh,xphonenum=case when left(xphonenum,1) in ('0','1') then '' else '0574' end + xphonenum</column_expression>
+<table_name>from xuservoice</table_name>
+<search_condition>left(case when left(xphonenum,1) in ('0','1') then '' else '0574' end+ xphonenum,11) = '13867877813'</search_condition>
+<order_by_expression>xRecDate desc</order_by_expression>
+</SyncDataView>

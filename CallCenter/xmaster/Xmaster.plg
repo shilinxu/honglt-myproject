@@ -1,0 +1,76 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Xmaster - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Release/Xmaster.res" /d "NDEBUG" /d "_AFXDLL" "E:\VCÖªÊ¶¿â\CallCenter\Xmaster\Xmaster.rc"" 
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP11C.tmp" with contents
+[
+version.lib Ws2_32.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/Xmaster.pdb" /machine:I386 /out:"../Xmaster.exe" 
+".\Release\buffer.obj"
+".\Release\Channel.obj"
+".\Release\connection.obj"
+".\Release\CoolInterface.obj"
+".\Release\CoolMenu.obj"
+".\Release\CtrlCoolBar.obj"
+".\Release\CtrlCoolMenuBar.obj"
+".\Release\CtrlIconButton.obj"
+".\Release\CtrlNetworkChild.obj"
+".\Release\CtrlNetworkPanel.obj"
+".\Release\CtrlPluginList.obj"
+".\Release\CtrlPluginPanel.obj"
+".\Release\CtrlReportList.obj"
+".\Release\CtrlReportPanel.obj"
+".\Release\CtrlTaskPanel.obj"
+".\Release\CtrlText.obj"
+".\Release\DlgAbout.obj"
+".\Release\DlgProfilesManager.obj"
+".\Release\DlgSettingsManager.obj"
+".\Release\DlgSplash.obj"
+".\Release\HisReport.obj"
+".\Release\ImageFile.obj"
+".\Release\Network.obj"
+".\Release\Packet.obj"
+".\Release\PacketCore.obj"
+".\Release\PageProfileRuler.obj"
+".\Release\pageprofilesecure.obj"
+".\Release\PageProfileTalker.obj"
+".\Release\PageSettingsBlock.obj"
+".\Release\PageSettingsGeneral.obj"
+".\Release\PageSettingsPayer.obj"
+".\Release\PageSettingsRecord.obj"
+".\Release\PageSettingsSecure.obj"
+".\Release\PageSettingsSubSm.obj"
+".\Release\profiles.obj"
+".\Release\Registry.obj"
+".\Release\Settings.obj"
+".\Release\Skin.obj"
+".\Release\StdAfx.obj"
+".\Release\Transfer.obj"
+".\Release\WindowManager.obj"
+".\Release\WndChild.obj"
+".\Release\WndMain.obj"
+".\Release\WndNetwork.obj"
+".\Release\WndPlugin.obj"
+".\Release\WndReport.obj"
+".\Release\WndSettingsPage.obj"
+".\Release\WndSettingsSheet.obj"
+".\Release\Xmaster.obj"
+".\Release\xml.obj"
+".\Release\Xmaster.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP11C.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Linking...
+
+
+
+<h3>Results</h3>
+Xmaster.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

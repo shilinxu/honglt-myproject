@@ -1,0 +1,36 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: xDialerChannel - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP63.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "..\\" /I "..\..\Common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_WINDLL" /D "_AFXDLL" /Fp"Release/xDialerChannel.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\VCÖªÊ¶¿â\CallCenter\Xcenter\xDialerChannel\channeldialer.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP63.tmp" 
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP64.tmp" with contents
+[
+SHP_A3.lib /nologo /dll /incremental:no /pdb:"Release/xDialerChannel.pdb" /machine:I386 /def:".\xDialerChannel.def" /out:"../../xDialerChannel.dll" /implib:"Release/xDialerChannel.lib" /libpath:"..\ShCti" 
+".\Release\channeldialer.obj"
+".\Release\dllmain.obj"
+".\Release\StdAfx.obj"
+".\Release\xDialerChannel.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP64.tmp"
+<h3>Output Window</h3>
+Compiling...
+channeldialer.cpp
+Linking...
+   Creating library Release/xDialerChannel.lib and object Release/xDialerChannel.exp
+
+
+
+<h3>Results</h3>
+xDialerChannel.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

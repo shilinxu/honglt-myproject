@@ -1,0 +1,41 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: xNotifyChannel - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP25.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "..\\" /I "..\..\Common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_WINDLL" /D "_AFXDLL" /Fp"Release/xNotifyChannel.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\VCÖªÊ¶¿â\CallCenter\Xcenter\xNotifyChannel\channelnotify.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP25.tmp" 
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP26.tmp" with contents
+[
+SHP_A3.lib /nologo /dll /incremental:no /pdb:"Release/xNotifyChannel.pdb" /machine:I386 /def:".\xNotifyChannel.def" /out:"../../xNotifyChannel.dll" /implib:"Release/xNotifyChannel.lib" /libpath:"..\ShCti" 
+".\Release\channelnotify.obj"
+".\Release\DlgChatProperties.obj"
+".\Release\dllmain.obj"
+".\Release\pageprofilechat.obj"
+".\Release\PageProfilePlay.obj"
+".\Release\PageSettingsPlay.obj"
+".\Release\StdAfx.obj"
+".\Release\xml.obj"
+".\Release\xNotifyChannel.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP26.tmp"
+<h3>Output Window</h3>
+Compiling...
+channelnotify.cpp
+Linking...
+   Creating library Release/xNotifyChannel.lib and object Release/xNotifyChannel.exp
+
+
+
+<h3>Results</h3>
+xNotifyChannel.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
