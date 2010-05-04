@@ -1,0 +1,196 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{537ACA76-A9D8-4E7C-9F1A-00217FB2FC99}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataCenter</RootNamespace>
+    <AssemblyName>CmppClient</AssemblyName>
+    <ApplicationIcon>Resources\CmppClient.ico</ApplicationIcon>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buffer.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProfilesManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProfilesMobile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProfilesMobile.Designer.cs">
+      <DependentUpon>frmProfilesMobile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettingsGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettingsGeneral.Designer.cs">
+      <DependentUpon>frmSettingsGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettingsManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettingsMobile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettingsMobile.Designer.cs">
+      <DependentUpon>frmSettingsMobile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettingsSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettingsSheet.Designer.cs">
+      <DependentUpon>frmSettingsSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HttpClient.cs" />
+    <Compile Include="HttpServer.cs" />
+    <Compile Include="LogService.cs" />
+    <Compile Include="PacketBase.cs" />
+    <Compile Include="Properties\History.cs" />
+    <Compile Include="Properties\Profiles.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProfilesMobile.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmProfilesMobile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettingsGeneral.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSettingsGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettingsMobile.resx">
+      <DependentUpon>frmSettingsMobile.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettingsSheet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSettingsSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettingsProvision.resx">
+      <DependentUpon>frmSettingsProvision.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMobile.resx">
+      <DependentUpon>frmMobile.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProvision.resx">
+      <DependentUpon>frmProvision.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProfilesSecure.resx">
+      <DependentUpon>frmProfilesSecure.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Resources\Products.bmp" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="frmSettingsProvision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettingsProvision.Designer.cs">
+      <DependentUpon>frmSettingsProvision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMobile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMobile.Designer.cs">
+      <DependentUpon>frmMobile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProvision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProvision.Designer.cs">
+      <DependentUpon>frmProvision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\PropertyBag.cs" />
+    <Compile Include="frmProfilesSecure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProfilesSecure.Designer.cs">
+      <DependentUpon>frmProfilesSecure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transfer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.jpg" />
+    <None Include="Resources\MenuBar.bmp" />
+    <None Include="Resources\CmppClient.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
