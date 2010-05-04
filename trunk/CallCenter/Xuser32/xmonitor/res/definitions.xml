@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<skin xmlns="http://2451.vicp.net/schemas/Skin.xsd" version="1.0">
+
+<commandMap>
+	<command code="32801" id="ID_NETWORK_CONNECT"/>
+	<command code="32802" id="ID_USER_BLACKLST"/>
+	<command code="32852" id="ID_MEDIA_RECORD"/>
+	<command code="32853" id="ID_MEDIA_REC_STOP"/>
+	<command code="32857" id="ID_MEDIA_REC_MASK"/>
+	<command code="32858" id="ID_INNER_QUICK"/>
+</commandMap>
+
+</skin>

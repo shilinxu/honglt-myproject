@@ -1,0 +1,145 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "H263Codec"=".\H263Codec\H263Codec.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/CallCenter/H263Codec", DAAAAAAA
+    .\h263codec
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "XLiveUpdate"=".\XLiveUpdate\XLiveUpdate.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/CallCenter/XLiveUpdate", ESAAAAAA
+    .\xliveupdate
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Xcenter"=".\Xcenter\Xcenter.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/CallCenter/Xcenter", XFAAAAAA
+    .\Xcenter
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Xgateway"=".\Xgateway\Xgateway.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/CallCenter/Xgateway", XNAAAAAA
+    .\xgateway
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Xmaster"=".\Xmaster\Xmaster.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/CallCenter/Xmaster", GTAAAAAA
+    .\xmaster
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Xmonitor"=".\Xmonitor\Xmonitor.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/CallCenter/Xmonitor", OXAAAAAA
+    .\xmonitor
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Xphone"=".\Xphone\Xphone.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/CallCenter/Xphone", UCBAAAAA
+    .\xphone
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Xuser32"=".\Xuser32\Xuser32.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/CallCenter/Xuser32", YEBAAAAA
+    .\xuser32
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

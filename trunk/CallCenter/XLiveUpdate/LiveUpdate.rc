@@ -1,0 +1,253 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "Res\\LiveUpdate.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_WIZARD_WELCOME DIALOGEX 0, 0, 317, 153
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "欢迎使用96031城市总机"
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         102,IDC_STATIC,"Static",SS_BITMAP,0,0,83,149
+    LTEXT           "在线升级使用Internet连接，请确认系统已经联接上互联网。",
+                    IDC_STATIC,95,42,212,11,SS_CENTERIMAGE
+    LTEXT           "欢迎使用在线升级。",IDC_WELCOME,95,10,73,11,
+                    SS_CENTERIMAGE
+    LTEXT           "该程序可帮助您升级96031城市总机产品",IDC_STATIC,95,25,
+                    141,11,SS_CENTERIMAGE
+END
+
+IDD_WIZARD_FINISHED DIALOGEX 0, 0, 317, 153
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "在线升级成功"
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         102,IDC_STATIC,"Static",SS_BITMAP,0,0,83,149
+    LTEXT           "欢迎以后继续关注我们最新产品的发布。",IDC_STATIC,95,42,
+                    145,11,SS_CENTERIMAGE
+    LTEXT           "感谢使用在线升级。",IDC_WELCOME,95,10,73,11,
+                    SS_CENTERIMAGE
+    LTEXT           "您已成功更新到城市总机的最新版本",IDC_STATIC,95,25,129,
+                    11,SS_CENTERIMAGE
+    LTEXT           "Ver1.0",IDC_VERSION,228,25,73,11,SS_CENTERIMAGE
+    LTEXT           "http://www.96031.com.cn",IDC_WEB,181,63,90,10
+    LTEXT           "更多精彩敬请关注：",IDC_STATIC,95,62,73,11,
+                    SS_CENTERIMAGE
+END
+
+IDD_WIZARD_CHECKER DIALOGEX 0, 0, 317, 153
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "检查更新列表"
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         102,IDC_STATIC,"Static",SS_BITMAP,0,0,83,149
+    LTEXT           "请退出所有相关程序，然后点击下一步开始升级。",
+                    IDC_UPGRADER,95,42,177,11,SS_CENTERIMAGE
+    LTEXT           "感谢使用在线升级。",IDC_WELCOME,95,10,73,11,
+                    SS_CENTERIMAGE
+    LTEXT           "在线升级正在检查我们产品最新的升级包，请稍等片刻...",
+                    IDC_STATIC,95,25,201,11,SS_CENTERIMAGE
+    CONTROL         "正在",IDC_PROGRESS,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | SS_SUNKEN | WS_GROUP,90,130,216,11
+END
+
+IDD_WIZARD_NOTHING DIALOGEX 0, 0, 317, 153
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "在线升级成功"
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         102,IDC_STATIC,"Static",SS_BITMAP,0,0,83,149
+    LTEXT           "欢迎以后继续关注我们最新产品的更新。",IDC_STATIC,95,42,
+                    145,11,SS_CENTERIMAGE
+    LTEXT           "感谢使用在线升级。",IDC_WELCOME,95,10,73,11,
+                    SS_CENTERIMAGE
+    LTEXT           "您所查询的城市总机产品已是最新版",IDC_STATIC,95,25,129,
+                    11,SS_CENTERIMAGE
+    LTEXT           "Ver1.0",IDC_VERSION,228,25,73,11,SS_CENTERIMAGE
+    LTEXT           "http://www.96031.com.cn",IDC_WEB,181,63,90,10
+    LTEXT           "更多精彩敬请关注：",IDC_STATIC,95,62,73,11,
+                    SS_CENTERIMAGE
+END
+
+IDD_WIZARD_FAILED DIALOGEX 0, 0, 317, 153
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "升级失败"
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         102,-1,"Static",SS_BITMAP,0,0,83,149
+    LTEXT           "建议您稍后再试，谢谢。",-1,93,62,89,11,SS_CENTERIMAGE
+    LTEXT           "感谢使用在线升级。",IDC_WELCOME,95,10,73,11,
+                    SS_CENTERIMAGE
+    LTEXT           "产品更新失败，原因可能涉及网络、文件读写等，请检查。",
+                    -1,95,25,209,11,SS_CENTERIMAGE
+    LTEXT           "http://www.96031.com.cn",IDC_WEB,189,63,90,10
+END
+
+IDD_WIZARD_UPDATE DIALOGEX 0, 0, 317, 153
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "下载升级产品"
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         102,IDC_STATIC,"Static",SS_BITMAP,0,0,83,149
+    LTEXT           "下载过程可能会持续几分钟，请耐心等待；中途退出可能使系统无法运作。",
+                    IDC_STATIC,95,42,211,19
+    LTEXT           "感谢使用在线升级。",IDC_WELCOME,95,10,73,11,
+                    SS_CENTERIMAGE
+    LTEXT           "在线升级正在从互联网下载最新发布的产品，请稍侯...",
+                    IDC_STATIC,95,25,193,11,SS_CENTERIMAGE
+    CONTROL         "正在",IDC_PROGRESS,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | SS_SUNKEN | WS_GROUP,90,130,216,11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_PRODUCTS            BITMAP  DISCARDABLE     "Res\\products.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_WIZARD_WELCOME, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 314
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_WIZARD_FINISHED, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 314
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_WIZARD_CHECKER, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 314
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_WIZARD_NOTHING, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 314
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_WIZARD_FAILED, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 314
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_WIZARD_UPDATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 314
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 150
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_HAND                CURSOR  DISCARDABLE     "Res\\Hand.cur"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
