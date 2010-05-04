@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<skin xmlns="http://2451.vicp.net/schemas/Skin.xsd" version="1.0">
+
+<commandMap>
+	<command code="32801" id="ID_USER_INFO"/>
+	<command code="32802" id="ID_USER_PASSWORD"/>
+	<command code="32803" id="ID_USER_TOPIC"/>
+	<command code="32804" id="ID_TOPIC_MAILBOX"/>
+	<command code="32805" id="ID_TOPIC_FAXBOX"/>
+	<command code="32852" id="ID_MEDIA_REFRESH"/>
+	<command code="32853" id="ID_MEDIA_DOWNLOAD"/>
+	<command code="32857" id="ID_MEDIA_PLAY"/>
+	<command code="32858" id="ID_SEARCH_QUICK"/>
+	<command code="32859" id="ID_MEDIA_REMOVE"/>
+	<command code="32860" id="ID_MEDIA_RENEW"/>
+</commandMap>
+
+</skin>

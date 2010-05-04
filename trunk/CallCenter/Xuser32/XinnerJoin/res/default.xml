@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="gb2312"?>
+
+<skin xmlns="http://2451.vicp.net/schemas/Skin.xsd" version="1.0">
+
+<!-- Toolbar Definitions -->
+<toolbars>
+	<!-- Agency WINDOW -->
+	<toolbar name="CInnerWnd.Header">
+		<control id="59392" width="190" height="17"/>
+		<separator />
+		<rightAlign/>
+		<!--
+		<label text="号码:" tip="在这里输入您要呼叫的电话号码"/>
+		-->
+		<button id="ID_SEARCH_GROUP" text="通信录" tip="查找通信录。"/>
+		<control id="1002" width="142"/>
+        <button id="ID_NETWORK_CONNECT" text="连接"/>
+	</toolbar>
+	<toolbar name="CInnerWnd.Bottom">
+		<button id="ID_INNER_REPLY" text="回电"/>
+		<separator />
+		<button id="ID_INNER_REFRESH" text="刷新" tip="重新下载通话记录。"/>
+		<button id="ID_USER_MEETING" text="电话会议" tip="自建多方通话。"/>
+		<separator />
+		<label text="可用余额:" tip="当前可用余额"/>
+		<control id="1004" width="58"/>
+		<separator />
+		<rightAlign/>
+		<label text="号码:" tip="在这里输入您要查找的电话号码"/>
+		<control id="1003" width="142"/>
+		<button id="ID_SEARCH_QUICK" text="查找" tip="查找号码。"/>
+	</toolbar>
+</toolbars>
+
+<!-- Command Images -->
+<commandImages>
+	<bitmap id="127">
+		<image/>
+		<image id="ID_NETWORK_CONNECT" id1="ID_INNER_REPLY"/>
+		<image id="ID_NETWORK_DISCONNECT"/>
+		<image/>
+		<image/>
+		<image/>
+		<image id="ID_SEARCH_GROUP"/>
+		<image/>
+		<image/>
+		<image/>
+		<image/>
+		<image/>
+		<image id="ID_AGENCY_PROPERTIES"/>
+		<image id="ID_APP_ABOUT"/>
+		<image/>
+		<image/>
+		<image/>
+		<image/>
+		<image/>
+		<image id="ID_HELP_FAQ" id1="ID_HELP_FORUMS"/>
+		<image id="ID_TAB_HOME"/>
+		<image id="ID_INNER_REFRESH"/>
+		<image id="ID_SEARCH_QUICK"/>
+		<image/>
+		<image id="ID_USER_MEETING"/>
+		<image/>
+		<image/>
+		<image/>
+		<image/>
+		<image id="ID_TOOLS_PROFILE"/>
+		<image/>
+		<image/>
+	</bitmap>
+</commandImages>
+
+</skin>

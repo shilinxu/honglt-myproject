@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="gb2312"?>
+
+<skin xmlns="http://2451.vicp.net/schemas/Skin.xsd" version="1.0">
+
+<!-- Toolbar Definitions -->
+<toolbars>
+	<!-- Agency WINDOW -->
+	<toolbar name="CMonitorWnd.Header">
+		<label text="时间:" tip="当前系统时间"/>
+		<control id="1001" width="142"/>
+	</toolbar>
+	<toolbar name="CMonitorWnd.Bottom">
+		<button id="ID_MEDIA_RECORD" text="录像"/>
+		<button id="ID_MEDIA_REC_MASK" text="记录视频"/>
+		<separator />
+	</toolbar>
+</toolbars>
+
+<!-- Command Images -->
+<commandImages>
+	<bitmap id="127">
+		<image id="ID_INNER_REFRESH"/>
+		<image id="ID_NETWORK_CONNECT" id1="ID_MEDIA_RECORD"/>
+		<image id="ID_MEDIA_REC_STOP"/>
+		<image/>
+		<image/>
+		<image/>
+		<image id="ID_AGENCY_ALBUM_NEW"/>
+		<image/>
+		<image id="ID_USER_BLACKLIST"/>
+		<image/>
+		<image/>
+		<image/>
+		<image id="ID_AGENCY_PROPERTIES"/>
+		<image id="ID_APP_ABOUT"/>
+		<image/>
+		<image/>
+		<image/>
+		<image/>
+		<image/>
+		<image id="ID_HELP_FAQ" id1="ID_HELP_FORUMS"/>
+		<image id="ID_TAB_HOME"/>
+		<image id="ID_TAB_REPORT"/>
+		<image id="ID_INNER_QUICK"/>
+		<image/>
+		<image/>
+		<image/>
+		<image/>
+		<image/>
+		<image/>
+		<image id="ID_TOOLS_PROFILE"/>
+		<image/>
+		<image/>
+	</bitmap>
+</commandImages>
+
+</skin>

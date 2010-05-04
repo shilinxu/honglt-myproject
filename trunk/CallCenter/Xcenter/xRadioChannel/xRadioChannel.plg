@@ -1,0 +1,30 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: xRadioChannel - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP48.tmp" with contents
+[
+SHP_A3.lib /nologo /dll /incremental:yes /pdb:"Debug/xRadioChannel.pdb" /debug /machine:I386 /nodefaultlib:"LIBC" /def:".\xRadioChannel.def" /out:"\\192.168.0.240\callcenter\xRadioChannel.dll" /implib:"Debug/xRadioChannel.lib" /pdbtype:sept /libpath:"..\ShCti" 
+".\Debug\ChannelRadio.obj"
+".\Debug\dllmain.obj"
+".\Debug\PageSettingsPlay.obj"
+".\Debug\StdAfx.obj"
+".\Debug\xRadioChannel.res"
+".\gdat.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP48.tmp"
+<h3>Output Window</h3>
+Linking...
+   Creating library Debug/xRadioChannel.lib and object Debug/xRadioChannel.exp
+
+
+
+<h3>Results</h3>
+xRadioChannel.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

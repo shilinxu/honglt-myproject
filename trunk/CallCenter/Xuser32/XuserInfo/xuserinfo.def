@@ -1,0 +1,10 @@
+; XuserInfo.def : Declares the module parameters for the DLL.
+
+LIBRARY      "XuserInfo"
+DESCRIPTION  'XuserInfo Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+	Create=?Create@@YAPAVCChildWnd@@PAVCXMLElement@@PAVCWindowManager@@@Z
+	GetUserGroupInfo=?GetUserGroupInfo@CUserWnd@@SAKPBDPAPAVCXMLElement@@K@Z
+	GetUserGroupMenu=?GetUserGroupInfo@@YAKPBDPAUHMENU__@@@Z

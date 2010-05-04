@@ -1,0 +1,12 @@
+;===========================================================================
+;  Copyright (c) ZBTX Soft Development Team, 2002-2004. All Rights Reserved.
+;===========================================================================
+
+LIBRARY     h263codc.ax
+
+EXPORTS
+            DllMain                 PRIVATE
+            DllGetClassObject       PRIVATE
+            DllCanUnloadNow         PRIVATE
+            DllRegisterServer       PRIVATE
+            DllUnregisterServer     PRIVATE

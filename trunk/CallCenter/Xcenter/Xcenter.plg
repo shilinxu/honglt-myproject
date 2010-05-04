@@ -1,0 +1,298 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Xcenter - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Release/Xcenter.res" /d "NDEBUG" /d "_AFXDLL" "E:\VC知识库\CallCenter\Xcenter\Xcenter.rc"" 
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP8C.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "..\Common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /D "_AFXEXT" /Fp"Release/Xcenter.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\VC知识库\CallCenter\Common\buffer.cpp"
+"E:\VC知识库\CallCenter\Xcenter\channel.cpp"
+"E:\VC知识库\CallCenter\Xcenter\channelclerk.cpp"
+"E:\VC知识库\CallCenter\Xcenter\channelfax.cpp"
+"E:\VC知识库\CallCenter\Xcenter\channeluser.cpp"
+"E:\VC知识库\CallCenter\Xcenter\channeluser2.cpp"
+"E:\VC知识库\CallCenter\Xcenter\Circuitry.cpp"
+"E:\VC知识库\CallCenter\Common\connection.cpp"
+"E:\VC知识库\CallCenter\Xcenter\coolinterface.cpp"
+"E:\VC知识库\CallCenter\Xcenter\coolmenu.cpp"
+"E:\VC知识库\CallCenter\Xcenter\ctrlclerkpanel.cpp"
+"E:\VC知识库\CallCenter\Xcenter\ctrlcoolbar.cpp"
+"E:\VC知识库\CallCenter\Xcenter\ctrlcoolmenubar.cpp"
+"E:\VC知识库\CallCenter\Xcenter\ctrliconbutton.cpp"
+"E:\VC知识库\CallCenter\Xcenter\ctrliconcombo.cpp"
+"E:\VC知识库\CallCenter\Xcenter\CtrlMailPanel.cpp"
+"E:\VC知识库\CallCenter\Xcenter\ctrlmusicpanel.cpp"
+"E:\VC知识库\CallCenter\Xcenter\ctrlnetworkchild.cpp"
+"E:\VC知识库\CallCenter\Xcenter\ctrlnetworktree.cpp"
+"E:\VC知识库\CallCenter\Xcenter\ctrlp2jobpanel.cpp"
+"E:\VC知识库\CallCenter\Xcenter\CtrlPagerPanel.cpp"
+"E:\VC知识库\CallCenter\Xcenter\ctrltaskpanel.cpp"
+"E:\VC知识库\CallCenter\Xcenter\ctrltext.cpp"
+"E:\VC知识库\CallCenter\Xcenter\CtrlUserList.cpp"
+"E:\VC知识库\CallCenter\Xcenter\ctrluserpanel.cpp"
+"E:\VC知识库\CallCenter\Xcenter\dlgabout.cpp"
+"E:\VC知识库\CallCenter\Xcenter\dlgexecute.cpp"
+"E:\VC知识库\CallCenter\Xcenter\dlgpressermanager.cpp"
+"E:\VC知识库\CallCenter\Xcenter\dlgprofilesmanager.cpp"
+"E:\VC知识库\CallCenter\Xcenter\dlgsettingsmanager.cpp"
+"E:\VC知识库\CallCenter\Xcenter\dlgsplash.cpp"
+"E:\VC知识库\CallCenter\Xcenter\EDClock.cpp"
+"E:\VC知识库\CallCenter\Xcenter\Handshake.cpp"
+"E:\VC知识库\CallCenter\Xcenter\Handshakes.cpp"
+"E:\VC知识库\CallCenter\Xcenter\hisreport.cpp"
+"E:\VC知识库\CallCenter\Xcenter\imagefile.cpp"
+"E:\VC知识库\CallCenter\Xcenter\Interlink.cpp"
+"E:\VC知识库\CallCenter\Common\md5.cpp"
+"E:\VC知识库\CallCenter\Xcenter\neighbour.cpp"
+"E:\VC知识库\CallCenter\Xcenter\network.cpp"
+"E:\VC知识库\CallCenter\Common\Packet.cpp"
+"E:\VC知识库\CallCenter\Common\PacketCore.cpp"
+"E:\VC知识库\CallCenter\Xcenter\pagepresserfax.cpp"
+"E:\VC知识库\CallCenter\Xcenter\pagepresserrec.cpp"
+"E:\VC知识库\CallCenter\Xcenter\pagepresseruser.cpp"
+"E:\VC知识库\CallCenter\Xcenter\PageProfileAnalog.cpp"
+"E:\VC知识库\CallCenter\Xcenter\pageprofilecorp.cpp"
+"E:\VC知识库\CallCenter\Xcenter\PageProfileFinal.cpp"
+"E:\VC知识库\CallCenter\Xcenter\PageProfileInter.cpp"
+"E:\VC知识库\CallCenter\Xcenter\pageprofileuser.cpp"
+"E:\VC知识库\CallCenter\Xcenter\PageSettingsCentric.cpp"
+"E:\VC知识库\CallCenter\Xcenter\pagesettingsgeneral.cpp"
+"E:\VC知识库\CallCenter\Xcenter\PageSettingsMaster.cpp"
+"E:\VC知识库\CallCenter\Xcenter\pagesettingsmeeting.cpp"
+"E:\VC知识库\CallCenter\Xcenter\PageSettingsMonitor.cpp"
+"E:\VC知识库\CallCenter\Xcenter\PageSettingsOptimize.cpp"
+"E:\VC知识库\CallCenter\Xcenter\PageSettingsPager.cpp"
+"E:\VC知识库\CallCenter\Xcenter\PageSettingsTrunk.cpp"
+"E:\VC知识库\CallCenter\Xcenter\PageSettingsUser.cpp"
+"E:\VC知识库\CallCenter\Common\Pipeline.cpp"
+"E:\VC知识库\CallCenter\Xcenter\profiles.cpp"
+"E:\VC知识库\CallCenter\Xcenter\registry.cpp"
+"E:\VC知识库\CallCenter\Xcenter\settings.cpp"
+"E:\VC知识库\CallCenter\Xcenter\skin.cpp"
+"E:\VC知识库\CallCenter\Xcenter\traffic.cpp"
+"E:\VC知识库\CallCenter\Xcenter\transfer.cpp"
+"E:\VC知识库\CallCenter\Xcenter\windowmanager.cpp"
+"E:\VC知识库\CallCenter\Xcenter\wndchild.cpp"
+"E:\VC知识库\CallCenter\Xcenter\wndclerk.cpp"
+"E:\VC知识库\CallCenter\Xcenter\WndMail.cpp"
+"E:\VC知识库\CallCenter\Xcenter\wndmain.cpp"
+"E:\VC知识库\CallCenter\Xcenter\wndmusic.cpp"
+"E:\VC知识库\CallCenter\Xcenter\wndnetwork.cpp"
+"E:\VC知识库\CallCenter\Xcenter\WndPager.cpp"
+"E:\VC知识库\CallCenter\Xcenter\wndsettingspage.cpp"
+"E:\VC知识库\CallCenter\Xcenter\wndsettingssheet.cpp"
+"E:\VC知识库\CallCenter\Xcenter\wnduser.cpp"
+"E:\VC知识库\CallCenter\Xcenter\Xcenter.cpp"
+"E:\VC知识库\CallCenter\Common\xml.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP8C.tmp" 
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP8D.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "..\Common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /D "_AFXEXT" /Fp"Release/Xcenter.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\VC知识库\CallCenter\Xcenter\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP8D.tmp" 
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP8E.tmp" with contents
+[
+version.lib Ws2_32.lib Mpr.lib SHP_A3.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/Xcenter.pdb" /machine:I386 /out:"../Xcenter.exe" /libpath:"ShCti" 
+".\Release\buffer.obj"
+".\Release\channel.obj"
+".\Release\channelclerk.obj"
+".\Release\channelfax.obj"
+".\Release\channeluser.obj"
+".\Release\channeluser2.obj"
+".\Release\Circuitry.obj"
+".\Release\connection.obj"
+".\Release\coolinterface.obj"
+".\Release\coolmenu.obj"
+".\Release\ctrlclerkpanel.obj"
+".\Release\ctrlcoolbar.obj"
+".\Release\ctrlcoolmenubar.obj"
+".\Release\ctrliconbutton.obj"
+".\Release\ctrliconcombo.obj"
+".\Release\CtrlMailPanel.obj"
+".\Release\ctrlmusicpanel.obj"
+".\Release\ctrlnetworkchild.obj"
+".\Release\ctrlnetworktree.obj"
+".\Release\ctrlp2jobpanel.obj"
+".\Release\CtrlPagerPanel.obj"
+".\Release\ctrltaskpanel.obj"
+".\Release\ctrltext.obj"
+".\Release\CtrlUserList.obj"
+".\Release\ctrluserpanel.obj"
+".\Release\dlgabout.obj"
+".\Release\dlgexecute.obj"
+".\Release\dlgpressermanager.obj"
+".\Release\dlgprofilesmanager.obj"
+".\Release\dlgsettingsmanager.obj"
+".\Release\dlgsplash.obj"
+".\Release\EDClock.obj"
+".\Release\Handshake.obj"
+".\Release\Handshakes.obj"
+".\Release\hisreport.obj"
+".\Release\imagefile.obj"
+".\Release\Interlink.obj"
+".\Release\md5.obj"
+".\Release\neighbour.obj"
+".\Release\network.obj"
+".\Release\Packet.obj"
+".\Release\PacketCore.obj"
+".\Release\pagepresserfax.obj"
+".\Release\pagepresserrec.obj"
+".\Release\pagepresseruser.obj"
+".\Release\PageProfileAnalog.obj"
+".\Release\pageprofilecorp.obj"
+".\Release\PageProfileFinal.obj"
+".\Release\PageProfileInter.obj"
+".\Release\pageprofileuser.obj"
+".\Release\PageSettingsCentric.obj"
+".\Release\pagesettingsgeneral.obj"
+".\Release\PageSettingsMaster.obj"
+".\Release\pagesettingsmeeting.obj"
+".\Release\PageSettingsMonitor.obj"
+".\Release\PageSettingsOptimize.obj"
+".\Release\PageSettingsPager.obj"
+".\Release\PageSettingsTrunk.obj"
+".\Release\PageSettingsUser.obj"
+".\Release\Pipeline.obj"
+".\Release\profiles.obj"
+".\Release\registry.obj"
+".\Release\settings.obj"
+".\Release\skin.obj"
+".\Release\StdAfx.obj"
+".\Release\traffic.obj"
+".\Release\transfer.obj"
+".\Release\windowmanager.obj"
+".\Release\wndchild.obj"
+".\Release\wndclerk.obj"
+".\Release\WndMail.obj"
+".\Release\wndmain.obj"
+".\Release\wndmusic.obj"
+".\Release\wndnetwork.obj"
+".\Release\WndPager.obj"
+".\Release\wndsettingspage.obj"
+".\Release\wndsettingssheet.obj"
+".\Release\wnduser.obj"
+".\Release\Xcenter.obj"
+".\Release\xml.obj"
+".\Release\Xcenter.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP8E.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+
+NOTE: WINVER has been defined as 0x0500 or greater which enables
+Windows NT 5.0 and Windows 98 features. When these headers were released,
+Windows NT 5.0 beta 1 and Windows 98 beta 2.1 were the current versions.
+
+For this release when WINVER is defined as 0x0500 or greater, you can only
+build beta or test applications.  To build a retail application,
+set WINVER to 0x0400 or visit http://www.microsoft.com/msdn/sdk
+to see if retail Windows NT 5.0 or Windows 98 headers are available.
+
+See the SDK release notes for more information.
+
+Compiling...
+buffer.cpp
+channel.cpp
+channelclerk.cpp
+channelfax.cpp
+channeluser.cpp
+channeluser2.cpp
+Circuitry.cpp
+connection.cpp
+coolinterface.cpp
+coolmenu.cpp
+ctrlclerkpanel.cpp
+ctrlcoolbar.cpp
+ctrlcoolmenubar.cpp
+ctrliconbutton.cpp
+ctrliconcombo.cpp
+CtrlMailPanel.cpp
+ctrlmusicpanel.cpp
+ctrlnetworkchild.cpp
+ctrlnetworktree.cpp
+ctrlp2jobpanel.cpp
+Generating Code...
+Compiling...
+CtrlPagerPanel.cpp
+ctrltaskpanel.cpp
+ctrltext.cpp
+CtrlUserList.cpp
+ctrluserpanel.cpp
+dlgabout.cpp
+dlgexecute.cpp
+dlgpressermanager.cpp
+dlgprofilesmanager.cpp
+dlgsettingsmanager.cpp
+dlgsplash.cpp
+EDClock.cpp
+Handshake.cpp
+Handshakes.cpp
+hisreport.cpp
+imagefile.cpp
+Interlink.cpp
+md5.cpp
+neighbour.cpp
+network.cpp
+Generating Code...
+Compiling...
+Packet.cpp
+PacketCore.cpp
+pagepresserfax.cpp
+pagepresserrec.cpp
+pagepresseruser.cpp
+PageProfileAnalog.cpp
+pageprofilecorp.cpp
+PageProfileFinal.cpp
+PageProfileInter.cpp
+pageprofileuser.cpp
+PageSettingsCentric.cpp
+pagesettingsgeneral.cpp
+PageSettingsMaster.cpp
+pagesettingsmeeting.cpp
+PageSettingsMonitor.cpp
+PageSettingsOptimize.cpp
+PageSettingsPager.cpp
+PageSettingsTrunk.cpp
+PageSettingsUser.cpp
+Pipeline.cpp
+Generating Code...
+Compiling...
+profiles.cpp
+registry.cpp
+settings.cpp
+skin.cpp
+traffic.cpp
+transfer.cpp
+windowmanager.cpp
+wndchild.cpp
+wndclerk.cpp
+WndMail.cpp
+wndmain.cpp
+wndmusic.cpp
+wndnetwork.cpp
+WndPager.cpp
+wndsettingspage.cpp
+wndsettingssheet.cpp
+wnduser.cpp
+Xcenter.cpp
+xml.cpp
+Generating Code...
+Linking...
+   Creating library ../Xcenter.lib and object ../Xcenter.exp
+
+
+
+<h3>Results</h3>
+Xcenter.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

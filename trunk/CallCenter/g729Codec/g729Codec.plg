@@ -1,0 +1,42 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: g729Codec - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP1B0.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /Fp"Debug/g729Codec.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\VC知识库\CallCenter\g729Codec\dllmain.cpp"
+"E:\VC知识库\CallCenter\g729Codec\FilterG729Decoder.cpp"
+"E:\VC知识库\CallCenter\g729Codec\FilterG729Encoder.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP1B0.tmp" 
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP1B1.tmp" with contents
+[
+strmbasd.lib winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /incremental:yes /pdb:"Debug/g729codc.pdb" /debug /machine:I386 /nodefaultlib:"libcmtd" /def:".\g729Codec.def" /out:"Debug/g729codc.ax" /implib:"Debug/g729codc.lib" /pdbtype:sept 
+".\Debug\dllmain.obj"
+".\Debug\FilterG729Decoder.obj"
+".\Debug\FilterG729Encoder.obj"
+".\Debug\StdAfx.obj"
+".\va_g729.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP1B1.tmp"
+<h3>Output Window</h3>
+Compiling...
+dllmain.cpp
+FilterG729Decoder.cpp
+FilterG729Encoder.cpp
+Generating Code...
+Linking...
+   Creating library Debug/g729codc.lib and object Debug/g729codc.exp
+
+
+
+<h3>Results</h3>
+g729codc.ax - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[Xcenter.dsp]
+SCC_Aux_Path = "D:\Program Files\Microsoft Visual Studio\Common\VSS\ZBTX"
+SCC_Project_Name = "$/", aaaaaaaa
+
+[Xcenter.dsw]
+SCC_Aux_Path = "\\192.168.0.11\vss\"
+SCC_Project_Name = "$/CallCenter/Xcenter", XUAAAAAA

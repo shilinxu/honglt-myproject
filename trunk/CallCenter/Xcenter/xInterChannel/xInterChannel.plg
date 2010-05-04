@@ -1,0 +1,39 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: xInterChannel - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP5E.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "..\\" /I "..\..\Common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_WINDLL" /D "_AFXDLL" /Fp"Release/xInterChannel.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\VC知识库\CallCenter\Xcenter\xInterChannel\ChannelInter.cpp"
+"E:\VC知识库\CallCenter\Xcenter\xInterChannel\dllmain.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP5E.tmp" 
+Creating temporary file "C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP5F.tmp" with contents
+[
+SHP_A3.lib /nologo /dll /incremental:no /pdb:"Release/xInterChannel.pdb" /machine:I386 /def:".\xInterChannel.def" /out:"../../xInterChannel.dll" /implib:"Release/xInterChannel.lib" /libpath:"..\ShCti" 
+".\Release\ChannelInter.obj"
+".\Release\dllmain.obj"
+".\Release\StdAfx.obj"
+".\Release\xInterChannel.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\Honglt\LOCALS~1\Temp\RSP5F.tmp"
+<h3>Output Window</h3>
+Compiling...
+ChannelInter.cpp
+dllmain.cpp
+Generating Code...
+Linking...
+   Creating library Release/xInterChannel.lib and object Release/xInterChannel.exp
+
+
+
+<h3>Results</h3>
+xInterChannel.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

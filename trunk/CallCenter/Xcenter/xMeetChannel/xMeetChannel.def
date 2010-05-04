@@ -1,0 +1,5 @@
+EXPORTS
+Create=?Create@@YAPAVCChannel@@HPBD@Z
+XPageSettings=?XPageSettings@@YAPAVCSettingsPage@@XZ
+ConvertFrom=?ConvertFrom@CMeetChannel@@SAPAVCChannel@@PAV2@PBD@Z
+PagerFrom=?PagerFrom@CPagerChannel@@SAPAVCChannel@@PAV2@PBD1K@Z
