@@ -1,0 +1,8 @@
+; XinnerJoin.def : Declares the module parameters for the DLL.
+
+LIBRARY      "XinnerJoin"
+DESCRIPTION  'XinnerJoin Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+	Create=?Create@@YAPAVCChildWnd@@PAVCXMLElement@@PAVCWindowManager@@@Z

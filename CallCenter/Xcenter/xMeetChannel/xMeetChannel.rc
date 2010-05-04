@@ -1,0 +1,184 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,3,805,2600
+ PRODUCTVERSION 2,3,712,2500
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", " \0"
+            VALUE "FileDescription", "xMeetChannel\0"
+            VALUE "FileVersion", "2, 3, 805, 2600\0"
+            VALUE "InternalName", "\0"
+            VALUE "LegalCopyright", "Copyright ? 2006\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "xMeetChannel.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "\0"
+            VALUE "ProductVersion", "2, 3, 712, 2500\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SETTINGS_MEETING DIALOG DISCARDABLE  0, 0, 270, 114
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "电话会议"
+FONT 8, "Tahoma"
+BEGIN
+    LTEXT           "主持人走出会议室后最大预留会议时长:",-1,17,18,146,12,
+                    SS_CENTERIMAGE
+    GROUPBOX        "参数",-1,5,5,259,50,WS_GROUP
+    COMBOBOX        IDC_OUT_MAXTIME,192,18,66,90,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "会议最大允许重复呼叫3次, 并且每次呼叫间隔:",-1,17,34,
+                    164,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_CALL_SPACE,192,34,66,70,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "录音",-1,5,58,259,51
+    LTEXT           "录音路径:",-1,15,89,36,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_REC_PATH,59,89,172,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_REC_PATH_BROWSE,237,88,19,15
+    LTEXT           "命名规则:",-1,15,71,36,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_REC_FILE,59,71,143,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "恢复默认值",IDC_REC_FILE_DEFAULT,207,70,49,15
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SETTINGS_MEETING DLGINIT
+BEGIN
+    IDC_OUT_MAXTIME, 0x403, 6, 0
+0xb731, 0xd6d6, 0x00d3, 
+    IDC_OUT_MAXTIME, 0x403, 6, 0
+0xb733, 0xd6d6, 0x00d3, 
+    IDC_OUT_MAXTIME, 0x403, 6, 0
+0xb735, 0xd6d6, 0x00d3, 
+    IDC_OUT_MAXTIME, 0x403, 6, 0
+0xd031, 0xcaa1, 0x00b1, 
+    IDC_CALL_SPACE, 0x403, 5, 0
+0x3531, 0xebc3, "\000" 
+    IDC_CALL_SPACE, 0x403, 5, 0
+0x3033, 0xebc3, "\000" 
+    IDC_CALL_SPACE, 0x403, 6, 0
+0xb731, 0xd6d6, 0x00d3, 
+    IDC_CALL_SPACE, 0x403, 6, 0
+0xb733, 0xd6d6, 0x00d3, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SETTINGS_MEETING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 107
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

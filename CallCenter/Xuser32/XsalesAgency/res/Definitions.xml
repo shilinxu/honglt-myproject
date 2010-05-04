@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<skin xmlns="http://2451.vicp.net/schemas/Skin.xsd" version="1.0">
+
+<commandMap>
+	<command code="32851" id="ID_AGENCY_PROPERTIES"/>
+	<command code="32852" id="ID_AGENCY_REFRESH"/>
+	<command code="32857" id="ID_AGENCY_LAYOUT"/>
+	<command code="32858" id="ID_AGENCY_XQUICK"/>
+</commandMap>
+
+</skin>

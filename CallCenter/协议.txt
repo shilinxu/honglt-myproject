@@ -1,0 +1,97 @@
+﻿
+<?xml version="1.0"?>
+
+//////////////////////////////////////////////////////////////////////
+// 登录
+TX:
+LGN 620007 f379eaf3c831b04de153469d1bec345e..
+
+RX:
+OK
+
+//////////////////////////////////////////////////////////////////////
+// 同步业务
+TX:
+SOR
+
+RX:
+SOR 307
+
+<SyncOrderRelation text="宁波中北通信有限公司 - 96031城市总机">
+<SyncOrder id="xinf07110100001" text="语音充值频道">1234</SyncOrder>
+<SyncOrder id="xinf07110100002" text="营销代表">XsalesAgency</SyncOrder>
+<SyncOrder id="xinf07110100003">9603</SyncOrder>
+</SyncOrderRelation>
+
+//////////////////////////////////////////////////////////////////////
+// 同步营销栏目
+TX:
+SOR 78
+
+<SyncOrderRelation>
+<MsgType>XsalesAgency</MsgType>
+</SyncOrderRelation>
+
+RX:
+SOR 2224
+
+<SyncOrderRelation>
+<MsgType>XsalesAgency</MsgType> 
+
+<SyncOrder job="96031城市总机" id="SI20071001000001">
+<text>T E S T ffgf fd g dg fd gf dg fd g fdg fd g fdg fd gf g</text> 
+<timeopening>0900-1900; 1234-2345;</timeopening> 
+<timeexpired>2008-9-10 10:26:02</timeexpired> 
+</SyncOrder>
+
+<SyncOrder job="1234" id="SI20071001000002">
+<text /> 
+<timeopening /> 
+<timeexpired>2008-10-10 10:47:51</timeexpired> 
+</SyncOrder>
+
+...
+
+<SyncOrder job="4321" id="SI20071001000003">
+<text /> 
+<timeopening /> 
+<timeexpired>2008-10-10 11:18:53</timeexpired> 
+</SyncOrder>
+
+</SyncOrderRelation>
+
+//////////////////////////////////////////////////////////////////////
+// 同步营销明细
+TX:
+SOR 113
+
+<SyncOrderRelation hKey="SI20071001000001" top="1024">
+<MsgType>XsalesAgency</MsgType>
+</SyncOrderRelation>
+
+RX:
+SOR 4684
+
+<SyncOrderRelation hKey="SI20071001000001" top="1024">
+<MsgType>XsalesAgency</MsgType>
+
+<SyncOrder xphone="13867877813" xsale="SAL20061230000001">
+<xreason>=======</xreason>
+</SyncOrder>
+
+<SyncOrder xphone="13967810436" xsale="SAL20071024000003">
+<xreason>原因。。。111222</xreason>
+</SyncOrder>
+
+...
+
+<SyncOrder xphone="96031" xsale="SAL20071025000055">
+<xreason>哈哈</xreason>
+</SyncOrder>
+
+</SyncOrderRelation>
+
+//////////////////////////////////////////////////////////////////////
+// 启动营销链路
+TX:
+SessInterProvider

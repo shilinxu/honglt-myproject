@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<skin xmlns="http://2451.vicp.net/schemas/Skin.xsd" version="1.0">
+
+<commandMap>
+	<command code="32770" id="ID_CHECKMARK"/>
+	<command code="32771" id="ID_TAB_HOME"/>
+	<command code="32772" id="ID_TAB_REPORT"/>
+	<command code="32773" id="ID_TAB_PLUGIN"/>
+	<command code="32774" id="ID_TAB_CONNECT"/>
+	<command code="32801" id="ID_NETWORK_CONNECT"/>
+	<command code="32802" id="ID_NETWORK_DISCONNECT"/>
+	<command code="32803" id="ID_NETWORK_READY"/>
+	<command code="32804" id="ID_NETWORK_NAVIGATE"/>
+	<command code="32805" id="ID_NETWORK_COMPLETE"/>
+	<command code="32806" id="ID_NETWORK_REJECTED"/>
+	<command code="32812" id="ID_REPORT_PRINT"/>
+	<command code="32817" id="ID_TOOLS_SETTINGS"/>
+	<command code="32818" id="ID_TOOLS_PROFILES"/>
+	<command code="57648" id="ID_WINDOW_TOOLBAR"/>
+	<command code="57649" id="ID_WINDOW_STATUS_BAR"/>
+	<command code="57650" id="ID_WINDOW_DEBUG"/>
+	<command code="57664" id="ID_APP_ABOUT"/>
+	<command code="57665" id="ID_APP_EXIT"/>
+</commandMap>
+
+</skin>

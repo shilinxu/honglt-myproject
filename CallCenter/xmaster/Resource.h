@@ -1,0 +1,124 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Developer Studio generated include file.
+// Used by Xmaster.rc
+//
+#define IDR_MANIFEST                    1
+#define IDB_MENUBAR                     127
+#define IDR_MAINFRAME                   128
+#define IDR_HOMEFRAME                   130
+#define IDR_PLUGINFRAME                 131
+#define IDR_REPORTFRAME                 142
+#define IDC_HAND                        147
+#define IDD_ABOUT                       148
+#define IDD_SPLASH                      173
+#define IDD_SETTINGS_GENERAL            174
+#define IDB_PRODUCTS                    178
+#define IDD_SETTINGS_SECURE             181
+#define IDI_TASKPANEL                   181
+#define IDI_SEARCH_FOLDER               182
+#define IDI_CHECKMARK                   188
+#define IDD_SETTINGS_NAMER              198
+#define IDD_SETTINGS_RULER              199
+#define IDD_PROFILE_RULER               199
+#define IDD_SETTINGS_BLOCK              200
+#define IDD_SETTINGS_PAYER              201
+#define IDD_SETTINGS_SUBSM              202
+#define IDD_PROFILE_TALKER              203
+#define IDD_PROFILE_SECURE              204
+#define IDD_SETTINGS_RECORD             205
+#define IDB_TASKPANEL_FOOTER            224
+#define IDB_TASKBOX_CAPTION             225
+#define IDB_PANEL_MARK                  262
+#define IDC_HOST                        1000
+#define IDC_DATABASE                    1001
+#define IDC_PORT                        1003
+#define IDC_GIVEN_VALUE                 1004
+#define IDC_HEADER                      1004
+#define IDC_LENGTH                      1005
+#define IDC_USER_HEADER                 1005
+#define IDC_USER_LENGTH                 1006
+#define IDC_SHORT_FREE                  1007
+#define IDC_USER_TIME                   1008
+#define IDC_USER_DATE                   1009
+#define IDC_PAY_START                   1010
+#define IDC_USER_SUBID                  1010
+#define IDC_PAY_CLOSE                   1011
+#define IDC_USER_COOKIE                 1011
+#define IDC_PAY_BALAN                   1012
+#define IDC_GIVEN_LOCALID               1013
+#define IDC_GIVEN_LENGTH                1014
+#define IDC_GATEWAY                     1015
+#define IDC_USER_CYCLE                  1015
+#define IDC_ACTION                      1016
+#define IDC_GIVEN                       1016
+#define IDC_GIVEN_ENABLE                1017
+#define IDC_USERID                      1017
+#define IDC_RED_BALAN                   1018
+#define IDC_USER_REBACK                 1018
+#define IDC_PASSWORD                    1018
+#define IDC_RED_ENABLE                  1019
+#define IDC_RECORD                      1020
+#define IDC_MAX_LENGTH                  1023
+#define IDC_TITLE                       1024
+#define IDC_PATH                        1025
+#define IDC_LAST_LENGTH                 1027
+#define IDC_LAST_LENGTH2                1028
+#define IDC_PATH_BROWSE                 1047
+#define IDC_FIRST_LENGTH                1050
+#define IDC_FIRST_LENGTH2               1051
+#define IDC_FIRST_COST                  1085
+#define IDC_LAST_COST                   1086
+#define IDC_FIRST_COST2                 1087
+#define IDC_LAST_COST2                  1088
+#define IDC_WEB                         1091
+#define IDC_MAIL                        1092
+#define IDC_REGISTRY                    1093
+#define IDC_LIST                        1194
+#define IDC_ADD                         1200
+#define IDC_DESC                        1201
+#define IDC_DELETE                      1204
+#define IDC_EXT_LIST                    1267
+#define IDC_EXT_ADD                     1268
+#define IDC_EXT_REMOVE                  1269
+#define IDS_SETTINGS                    8000
+#define IDS_PROFILES                    8003
+#define IDS_NETWORK_CONNECT             8069
+#define IDS_NETWORK_CONNECTING          8070
+#define IDS_NETWORK_CONNECTED           8071
+#define IDS_NETWORK_DISCONNECT          8072
+#define IDS_NETWORK_DISCONNECT_CONFIRM  8073
+#define IDS_NETWORK_HISTORY             8074
+#define IDS_NETWORK_CONNECT_DROPED      8075
+#define IDR_XML_DEFAULT                 12009
+#define IDR_XML_DEFINITIONS             12010
+#define ID_CHECKMARK                    32770
+#define ID_TAB_HOME                     32771
+#define ID_TAB_REPORT                   32772
+#define ID_TAB_PLUGIN                   32773
+#define ID_TAB_CONNECT                  32774
+#define ID_NETWORK_CONNECT              32801
+#define ID_NETWORK_DISCONNECT           32802
+#define ID_NETWORK_READY                32803
+#define ID_NETWORK_NAVIGATE             32804
+#define ID_NETWORK_COMPLETE             32805
+#define ID_NETWORK_REJECTED             32806
+#define ID_REPORT_DETAILS               32811
+#define ID_REPORT_PRINT                 32812
+#define ID_TOOLS_SETTINGS               32817
+#define ID_TOOLS_PROFILES               32818
+#define ID_HELP_FAQ                     32858
+#define ID_WINDOW_TOOLBAR               57648
+#define ID_WINDOW_STATUS_BAR            57649
+#define ID_WINDOW_DEBUG                 57650
+#define IDS_QUITPROMPT                  61463
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        119
+#define _APS_NEXT_COMMAND_VALUE         40003
+#define _APS_NEXT_CONTROL_VALUE         1021
+#define _APS_NEXT_SYMED_VALUE           107
+#endif
+#endif

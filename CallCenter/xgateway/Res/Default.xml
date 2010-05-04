@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="gb2312"?>
+
+<skin xmlns="http://2451.vicp.net/schemas/Skin.xsd" version="1.0">
+
+<!-- Menu Definitions -->
+<menus>
+	<!-- MAIN WINDOW MENU BAR -->
+	<menu name="CMainWnd" type="bar">
+        <menu text="网络(_N)">
+            <item id="ID_NETWORK_CONNECT" text="连接(_C)" shortcut="Ctrl+G"/>
+            <item id="ID_NETWORK_DISCONNECT" text="断开连接(_D)"/>
+            <separator/>
+            <item id="ID_TAB_HOME" text="会话首页"/>
+            <item id="ID_TAB_VOIP" text="坐席(_U)"/>
+            <separator/>
+            <item id="ID_APP_EXIT" text="退出(_X)"/>
+        </menu>
+		<menu text="报表(_R)">
+			<item id="ID_TAB_REPORT" text="帐单明细(_R)" shortcut="Ctrl+R"/>
+			<separator/>
+			<item id="ID_REPORT_MUSIC" text="点歌统计(_M)..."/>
+			<item id="ID_REPORT_PRINT" text="帐单打印(_P)..."/>
+		</menu>
+		<menu text="作业(_J)">
+			<item id="ID_TASK_PAGER" text="短信传情(_P)"/>
+			<item id="ID_TASK_CLERK" text="提醒业务(_C)"/>
+            <separator/>
+			<menu text="电话营销">
+				<item id="ID_P2JOB_TELECOM" text="中国电信"/>
+			</menu>
+		</menu>
+		<menu text="工具(_T)">
+			<item id="ID_TOOLS_PROFILE" text="业务规则(_F)"/>
+			<item id="ID_TOOLS_PRESSER" text="信箱规则(_M)"/>
+			<separator/>
+			<item id="ID_TOOLS_SETTINGS" text="系统设置(_S)..."/>
+		</menu>
+		<menu text="窗口(_W)">
+			<item id="ID_WINDOW_TOOLBAR" text="显示工具栏(_T)"/>
+			<item id="ID_WINDOW_STATUS_BAR" text="显示状态栏(_S)"/>
+			<separator/>
+			<item id="ID_WINDOW_DEBUG" text="显示调试信息(_D)"/>
+		</menu>
+		<menu text="帮助(_H)">
+            <item id="ID_APP_ABOUT" text="关于(_A) 网关系统..."/>
+		</menu>
+	</menu>
+</menus>
+
+<!-- Toolbar Definitions -->
+<toolbars>
+	<!-- MAIN WINDOW -->
+	<toolbar name="CMainWnd">
+		<!--
+        <button id="ID_TAB_CONNECT" text="连接"/>
+		<separator />
+		-->
+        <button id="ID_TAB_HOME" text="首页"/>
+		<separator />
+        <button id="ID_TAB_VOIP" text="坐席"/>
+        <button id="ID_TAB_REPORT" text="帐单明细"/>
+		<separator />
+        <button id="ID_TOOLS_SETTINGS" text="系统设置"/>
+		<separator />
+        <button id="ID_APP_ABOUT" text="版本信息"/>
+	</toolbar>
+	<!-- Network WINDOW -->
+	<toolbar name="CNetworkWnd.Header">
+		<button id="ID_NETWORK_RECORD" text="录像"/>
+		<button id="ID_NETWORK_REC_MASK" text="记录视频"/>
+	</toolbar>
+	<!-- Pager WINDOW -->
+	<toolbar name="CPagerWnd">
+		<rightAlign/>
+		<label text="号码:" tip="在这里输入您要查找的电话号码"/>
+		<control id="1002" width="142"/>
+		<button id="ID_P2JOB_SEARCH" text="查找"/>
+	</toolbar>
+	<!-- Clerk WINDOW -->
+	<toolbar name="CClerkWnd">
+		<rightAlign/>
+		<label text="号码:" tip="在这里输入您要查找的电话号码"/>
+		<control id="1002" width="142"/>
+		<button id="ID_P2JOB_SEARCH" text="查找"/>
+	</toolbar>
+	<!-- Telecom WINDOW -->
+	<toolbar name="CTelecomWnd">
+		<!--label text="主叫:" tip="在这里输入发布人的电话号码"/>
+		<control id="1003" width="142"/-->
+		<button id="ID_P2JOB_IMPORT" text="导入号码"/>
+		<button id="ID_P2JOB_EXPORT" text="导出近24小时申请开通的号码"/>
+		<rightAlign/>
+		<label text="号码:" tip="在这里输入您要查找的电话号码"/>
+		<control id="1002" width="142"/>
+		<button id="ID_P2JOB_SEARCH" text="查找"/>
+	</toolbar>
+</toolbars>
+
+<!-- Command Images -->
+<commandImages>
+	<bitmap id="127">
+		<image id="ID_CHECKMARK"/>
+		<image id="ID_NETWORK_CONNECT" id1="ID_TAB_CONNECT"/>
+		<image id="ID_NETWORK_DISCONNECT" id1="ID_NETWORK_REC_STOP"/>
+		<image/>
+		<image id="ID_TASK_PAGER"/>
+		<image id="ID_NETWORK_RECORD"/>
+		<image/>
+		<image id="ID_NEIGHBOURE_DISCONNECT"/>
+		<image id="ID_CHANNEL_FAIL"/>
+		<image/>
+		<image/>
+		<image/>
+		<image/>
+		<image id="ID_APP_ABOUT"/>
+		<image/>
+		<image/>
+		<image id="ID_TASK_CLERK" id1="ID_CHANNEL_TUP" id2="ID_CHANNEL_ISUP" id3="ID_CHANNEL_SS1"/>
+		<image id="ID_CHANNEL_HOOK"/>
+		<image id="ID_TOOLS_SETTINGS" id1="ID_CHANNEL_OTHR"/>
+		<image id="ID_HELP_FAQ" id1="ID_HELP_FORUMS"/>
+		<image id="ID_TAB_HOME"/>
+		<image id="ID_TAB_REPORT"/>
+		<image id="ID_P2JOB_SEARCH"/>
+		<image/>
+		<image id="ID_REPORT_MUSIC"/>
+		<image id="ID_P2JOB_IMPORT"/>
+		<image/>
+		<image id="ID_TOOTLS_PRESSER"/>
+		<image id="ID_REPORT_LIST" id1="ID_P2JOB_EXPORT"/>
+		<image id="ID_TOOLS_PROFILE" id1="ID_TAB_VOIP" id2="ID_CHANNEL_PLAY" id3="ID_CHANNEL_USER"/>
+		<image/>
+		<image id="ID_CHANNEL_FAX"/>
+	</bitmap>
+	<bitmap id="150" mask="ffffff">
+		<image/>
+		<image/>
+		<image id="ID_P2JOB_TELECOM"/>
+	</bitmap>
+</commandImages>
+
+</skin>

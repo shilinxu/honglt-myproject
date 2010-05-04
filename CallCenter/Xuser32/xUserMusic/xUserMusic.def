@@ -1,0 +1,6 @@
+; xUserMusic.def
+
+LIBRARY      "xUserMusic"
+DESCRIPTION  'xUserMusic Windows Dynamic Link Library'
+
+EXPORTS

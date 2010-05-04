@@ -1,0 +1,210 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,3,1002,2600
+ PRODUCTVERSION 2,3,809,100
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", " \0"
+            VALUE "FileDescription", "xCallerChannel\0"
+            VALUE "FileVersion", "2, 3, 1002, 2600\0"
+            VALUE "InternalName", "\0"
+            VALUE "LegalCopyright", "Copyright ? 2006\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "xCallerChannel.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "\0"
+            VALUE "ProductVersion", "2, 3, 809, 100\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SETTINGS_CALLER DIALOG DISCARDABLE  0, 0, 270, 67
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "接线员"
+FONT 8, "Tahoma"
+BEGIN
+    GROUPBOX        "中继",IDC_STATIC,5,7,259,48,WS_GROUP
+    CONTROL         "如果坐席忙，送忙音",IDC_USER_BUSY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,17,22,86,12
+    LTEXT           "最大振铃片:",IDC_STATIC,123,21,44,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_RING_MAX,175,20,79,70,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "允许设置坐席值班时间",IDC_USER_NO,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,17,36,96,12
+    LTEXT           "值班时间段:",IDC_STATIC,123,36,44,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_USER_TIME,175,36,79,12,ES_AUTOHSCROLL
+END
+
+IDD_PROFILE_PLAY DIALOG DISCARDABLE  0, 0, 282, 207
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "接线员"
+FONT 8, "Tahoma"
+BEGIN
+    GROUPBOX        "规则:",IDC_STATIC,5,108,270,84,WS_GROUP
+    LTEXT           "企业号码:",IDC_STATIC,17,122,36,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_KEY,61,122,86,12,ES_AUTOHSCROLL
+    LTEXT           "是否呼转:",IDC_STATIC,152,122,36,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_FORWARD,192,122,77,70,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "呼转对象:",IDC_STATIC,17,138,36,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_PLAYER,61,138,178,70,CBS_DROPDOWN | CBS_AUTOHSCROLL | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "管理员:",IDC_STATIC,17,154,30,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_ADMIN,61,154,208,12,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "新增...",IDC_ADD,153,171,55,15
+    PUSHBUTTON      "删除",IDC_DELETE,213,171,55,15,WS_GROUP
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_GROUP | 
+                    WS_TABSTOP,5,5,270,99
+    PUSHBUTTON      "+",IDC_PLAYER_ADD,244,138,12,12
+    PUSHBUTTON      "-",IDC_PLAYER_REMOVE,256,138,12,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SETTINGS_CALLER DLGINIT
+BEGIN
+    IDC_RING_MAX, 0x403, 5, 0
+0x3531, 0xebc3, "\000" 
+    IDC_RING_MAX, 0x403, 5, 0
+0x3033, 0xebc3, "\000" 
+    IDC_RING_MAX, 0x403, 6, 0
+0xb731, 0xd6d6, 0x00d3, 
+    0
+END
+
+IDD_PROFILE_PLAY DLGINIT
+BEGIN
+    IDC_FORWARD, 0x403, 3, 0
+0xc7ca, "\000" 
+    IDC_FORWARD, 0x403, 3, 0
+0xf1b7, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SETTINGS_CALLER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_PROFILE_PLAY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 275
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 200
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
