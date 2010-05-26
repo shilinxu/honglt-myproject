@@ -36,28 +36,24 @@ RSC=rc.exe
 # PROP BASE Output_Dir "Release"
 # PROP BASE Intermediate_Dir "Release"
 # PROP BASE Target_Dir ""
-# PROP Use_MFC 2
+# PROP Use_MFC 0
 # PROP Use_Debug_Libraries 0
-# PROP Output_Dir "Release"
+# PROP Output_Dir ".."
 # PROP Intermediate_Dir "Release"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "ComService_EXPORTS" /YX /FD /c
-# ADD CPP /nologo /MD /W3 /GX /O2 /I "..\Common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_WINDLL" /D "_AFXDLL" /D "_AFXEXT" /Yu"stdafx.h" /FD /c
+# ADD CPP /nologo /MD /W3 /GX /O2 /I "..\Common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "AKM_EXPORT" /Yu"stdafx.h" /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x804 /d "NDEBUG"
-# ADD RSC /l 0x804 /d "NDEBUG" /d "_AFXDLL"
+# ADD RSC /l 0x804 /d "NDEBUG"
 BSC32=bscmake.exe
 # ADD BASE BSC32 /nologo
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /machine:I386
-# ADD LINK32 Ws2_32.lib /nologo /dll /machine:I386 /out:"../ComService.dll"
-# Begin Special Build Tool
-SOURCE="$(InputPath)"
-PostBuild_Cmds=Copy Release\ComService.lib ..\.
-# End Special Build Tool
+# ADD LINK32 Ws2_32.lib /nologo /dll /machine:I386
 
 !ELSEIF  "$(CFG)" == "ComService - Win32 Debug"
 
@@ -83,7 +79,8 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /debug /machine:I386 /pdbtype:sept
-# ADD LINK32 Ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /debug /machine:I386 /out:"../ComServiceD.dll" /pdbtype:sept
+# ADD LINK32 Ws2_32.lib /nologo /dll /debug /machine:I386 /out:"../ComServiceD.dll" /pdbtype:sept
+# SUBTRACT LINK32 /nodefaultlib
 
 !ENDIF 
 
@@ -116,28 +113,10 @@ SOURCE=.\ComService.rc
 # Begin Source File
 
 SOURCE=.\Connection.cpp
-
-!IF  "$(CFG)" == "ComService - Win32 Release"
-
-!ELSEIF  "$(CFG)" == "ComService - Win32 Debug"
-
-# PROP Exclude_From_Build 1
-
-!ENDIF 
-
 # End Source File
 # Begin Source File
 
 SOURCE=.\Encrypt.cpp
-
-!IF  "$(CFG)" == "ComService - Win32 Release"
-
-!ELSEIF  "$(CFG)" == "ComService - Win32 Debug"
-
-# PROP Exclude_From_Build 1
-
-!ENDIF 
-
 # End Source File
 # Begin Source File
 
@@ -146,8 +125,6 @@ SOURCE=.\ServiceThread.cpp
 !IF  "$(CFG)" == "ComService - Win32 Release"
 
 !ELSEIF  "$(CFG)" == "ComService - Win32 Debug"
-
-# PROP Exclude_From_Build 1
 
 !ENDIF 
 
@@ -160,15 +137,7 @@ SOURCE=.\StdAfx.cpp
 # Begin Source File
 
 SOURCE=.\XML.cpp
-
-!IF  "$(CFG)" == "ComService - Win32 Release"
-
-!ELSEIF  "$(CFG)" == "ComService - Win32 Debug"
-
 # PROP Exclude_From_Build 1
-
-!ENDIF 
-
 # End Source File
 # End Group
 # Begin Group "Header Files"

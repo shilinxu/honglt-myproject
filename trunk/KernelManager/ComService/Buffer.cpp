@@ -185,7 +185,7 @@ BOOL CBuffer::Read(void* pData, DWORD nLength)
 ///////////////////////////////////////////////////////////////////////////////
 // CBuffer read string helper
 
-AKM_String CBuffer::ReadString(DWORD nBytes, UINT nCodePage)
+CString CBuffer::ReadString(DWORD nBytes, UINT nCodePage)
 {
 	int nSource = (int)min( nBytes, m_nLength );
 	int nLength = MultiByteToWideChar( nCodePage, 0, (LPCSTR)m_pBuffer, nSource, NULL, 0 );
@@ -198,8 +198,8 @@ AKM_String CBuffer::ReadString(DWORD nBytes, UINT nCodePage)
 	LPSTR pByte = new CHAR[ nBytes ];
 	WideCharToMultiByte( nCodePage, 0, (LPCWSTR)pszWide, nLength, pByte, nBytes, NULL, NULL );
 
-	AKM_String str( pByte, 0, nBytes );
 	delete [] pszWide;
+	CString str( pByte, 0, nBytes );
 	delete [] pByte;
 	
 	Remove( nBytes );
@@ -209,10 +209,8 @@ AKM_String CBuffer::ReadString(DWORD nBytes, UINT nCodePage)
 ///////////////////////////////////////////////////////////////////////////////
 // CBuffer read line helper
 
-BOOL CBuffer::ReadLine(wstring& strLine, UINT nCodePage, BOOL bPeek)
+BOOL CBuffer::ReadLine(CString& strLine, UINT nCodePage, BOOL bPeek)
 {
-	strLine.empty();
-
 	DWORD nLength; for ( nLength = 0 ; nLength < m_nLength ; nLength++ )
 	{
 		if ( m_pBuffer[ nLength ] == '\n' ) break;
@@ -222,11 +220,17 @@ BOOL CBuffer::ReadLine(wstring& strLine, UINT nCodePage, BOOL bPeek)
 
 	int nWide = MultiByteToWideChar( nCodePage, 0, (LPCSTR)m_pBuffer, nLength, NULL, 0 );
 
-	LPWSTR pszWide = new WCHAR[ nLength ];
+	LPWSTR pszWide = new WCHAR[ nWide ];
 	MultiByteToWideChar( nCodePage, 0, (LPCSTR)m_pBuffer, nLength, pszWide, nWide );
+	
+	int nBytes = WideCharToMultiByte( nCodePage, 0, (LPCWSTR)pszWide, nWide, NULL, 0, NULL, NULL );
 
-	strLine = wstring(pszWide, 0, nWide);
+	LPSTR pByte = new CHAR[ nBytes ];
+	WideCharToMultiByte( nCodePage, 0, (LPCWSTR)pszWide, nWide, pByte, nBytes, NULL, NULL );
+
 	delete [] pszWide;
+	strLine.append( pByte, nBytes);
+	delete [] pByte;
 
 	int nCR = strLine.find_last_of( '\r' );
 	if ( nCR >= 0 ) strLine = strLine.erase( nCR );
@@ -235,29 +239,17 @@ BOOL CBuffer::ReadLine(wstring& strLine, UINT nCodePage, BOOL bPeek)
 
 	return TRUE;
 }
-#if 0
+
 ///////////////////////////////////////////////////////////////////////////////
 // CBuffer starts with helper
 
-// Takes a pointer to ASCII text, and the option to remove these characters from the start of the buffer if they are found there
-// Looks at the bytes at the start of the buffer, and determines if they are the same as the given ASCII text
-// Returns true if the text matches, false if it doesn't
 BOOL CBuffer::StartsWith(LPCSTR pszString, BOOL bRemove)
 {
-	// If the buffer isn't long enough to contain the given string, report the buffer doesn't start with it
 	if ( m_nLength < (int)strlen( pszString ) ) return FALSE;
 
-	// If the first characters in the buffer don't match those in the ASCII string, return false
-	if ( strncmp(               // Returns 0 if all the characters are the same
-		(LPCSTR)m_pBuffer,      // Look at the start of the buffer as ASCII text
-		(LPCSTR)pszString,      // The given text
-		strlen( pszString ) ) ) // Don't look too far into the buffer, we know it's long enough to hold the string
-		return FALSE;           // If one string would sort above another, the result is positive or negative
+	if ( strncmp( (LPCSTR)m_pBuffer, pszString, strlen( pszString ) ) ) return FALSE;
 
-	// If we got the option to remove the string if it matched, do it
 	if ( bRemove ) Remove( strlen( pszString ) );
 
-	// Report that the buffer does start with the given ASCII text
 	return TRUE;
 }
-#endif

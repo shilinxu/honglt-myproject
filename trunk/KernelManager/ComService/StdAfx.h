@@ -11,7 +11,6 @@
 // Configuration
 //
 
-#include "Config.h"
 /*
 #define WINVER			0x0500		// Windows Version
 #define _WIN32_WINDOWS	0x0500		// Windows Version
@@ -43,7 +42,7 @@
 //
 
 //#include "Template.h"
-//#include "ComService.h"
+#include "ComService.h"
 
 #undef IDC_HAND
 
