@@ -16,8 +16,6 @@ AKM_BEGIN_VERSIONED_NAMESPACE_DECL
 #define SWAP_LONG(x) ( ( ( (x) & 0xFF000000 ) >> 24 ) + ( ( (x) & 0x00FF0000 ) >> 8 ) + ( ( (x) & 0x0000FF00 ) << 8 ) + ( ( (x) & 0x000000FF ) << 24 ) )
 #define SWAP_64(x) ( ( SWAP_LONG( (x) & 0xFFFFFFFF ) << 32 ) | SWAP_LONG( (x) >> 32 ) )
 
-typedef std::string AKM_String;
-
 class AKM_Export CBuffer
 {
 // Construction
@@ -46,9 +44,9 @@ public:
 	void		EnsureBuffer(DWORD nLength);
 public:
 	BOOL		Read(void* pData, DWORD nLength);
-	AKM_String	ReadString(DWORD nBytes, UINT nCodePage = CP_ACP);
-	BOOL    ReadLine(wstring& strLine, UINT nCodePage = CP_ACP, BOOL bPeek = FALSE);
-//	BOOL    StartsWith(LPCSTR pszString, BOOL bRemove = FALSE);                      // Returns true if the buffer starts with this text
+	CString		ReadString(DWORD nBytes, UINT nCodePage = CP_ACP);
+	BOOL	    ReadLine(CString& strLine, UINT nCodePage = CP_ACP, BOOL bPeek = FALSE);
+	BOOL	    StartsWith(LPCSTR pszString, BOOL bRemove = FALSE);
 public:
 	static void ReverseBuffer(const void* pInput, void* pOutput, DWORD nLength);
 };

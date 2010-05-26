@@ -16,11 +16,12 @@ int main(int argc, char* argv[])
 BOOL Test_Buffer()
 {
 	CBuffer pBuffer;
-	pBuffer.Print( "1234567" );
+	pBuffer.Print( L"aaab²»12345\r\n00" );
 	
 	std::string str = 
 		pBuffer.ReadString(3);
 
-	str = pBuffer.ReadString(2);
+	std::string ss;
+	BOOL aa = pBuffer.ReadLine(ss);
 	return TRUE;
 }

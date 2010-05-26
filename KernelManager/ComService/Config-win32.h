@@ -23,6 +23,7 @@
 # define _WIN32_IE		0x0500		// IE Version
 
 # include <windows.h>				// Windows standard
+# include <tchar.h>					// ANSI v.s. UNICODE abstraction
 
 # if !defined (_MT)
 #  error You must link against multi-threaded libraries when using AKM (check your project settings)
