@@ -10,10 +10,10 @@
 #define CountString(String) ((UINT)((lstrlen(String)+1)*sizeof(TCHAR)))
 
 //安全删除指针
-#define  SafeDelete(pData)	{ try { delete pData; } catch (...) { } pData=NULL; } 
+#define SafeDelete(pData)	{ try { delete pData; } catch (...) { } pData=NULL; } 
 
 //安全删除指针
-#define  SafeDeleteArray(pData)	{ try { delete [] pData; } catch (...) { } pData=NULL; } 
+#define SafeDeleteArray(pData)	{ try { delete [] pData; } catch (...) { } pData=NULL; } 
 
 /////////////////////////////////////////////////////////////////////////////////////////
 

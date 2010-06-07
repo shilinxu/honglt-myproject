@@ -43,7 +43,7 @@ RSC=rc.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "ComService_EXPORTS" /YX /FD /c
-# ADD CPP /nologo /MD /W3 /GX /O2 /I "..\Common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "AKM_EXPORT" /Yu"stdafx.h" /FD /c
+# ADD CPP /nologo /MD /W3 /GX /O2 /I "..\Common" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "AKM_EXPORT" /Yu"stdafx.h" /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x804 /d "NDEBUG"
@@ -53,7 +53,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /machine:I386
-# ADD LINK32 Ws2_32.lib /nologo /dll /machine:I386
+# ADD LINK32 Ws2_32.lib libcmt.lib /nologo /dll /machine:I386
 
 !ELSEIF  "$(CFG)" == "ComService - Win32 Debug"
 
@@ -62,18 +62,18 @@ LINK32=link.exe
 # PROP BASE Output_Dir "Debug"
 # PROP BASE Intermediate_Dir "Debug"
 # PROP BASE Target_Dir ""
-# PROP Use_MFC 0
+# PROP Use_MFC 2
 # PROP Use_Debug_Libraries 1
 # PROP Output_Dir ".."
 # PROP Intermediate_Dir "Debug"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "ComService_EXPORTS" /YX /FD /GZ /c
-# ADD CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\Common" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "AKM_EXPORT" /Yu"stdafx.h" /FD /GZ /c
+# ADD CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /I "..\Common" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_AFXDLL" /D "AKM_EXPORT" /Yu"stdafx.h" /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x804 /d "_DEBUG"
-# ADD RSC /l 0x804 /d "_DEBUG"
+# ADD RSC /l 0x804 /d "_DEBUG" /d "_AFXDLL"
 BSC32=bscmake.exe
 # ADD BASE BSC32 /nologo
 # ADD BSC32 /nologo
@@ -97,6 +97,8 @@ SOURCE=.\Buffer.cpp
 
 !IF  "$(CFG)" == "ComService - Win32 Release"
 
+# PROP Exclude_From_Build 1
+
 !ELSEIF  "$(CFG)" == "ComService - Win32 Debug"
 
 !ENDIF 
@@ -109,20 +111,49 @@ SOURCE=.\ComService.cpp
 # Begin Source File
 
 SOURCE=.\ComService.rc
+
+!IF  "$(CFG)" == "ComService - Win32 Release"
+
+!ELSEIF  "$(CFG)" == "ComService - Win32 Debug"
+
+# PROP Exclude_From_Build 1
+
+!ENDIF 
+
 # End Source File
 # Begin Source File
 
 SOURCE=.\Connection.cpp
+
+!IF  "$(CFG)" == "ComService - Win32 Release"
+
+# PROP Exclude_From_Build 1
+
+!ELSEIF  "$(CFG)" == "ComService - Win32 Debug"
+
+!ENDIF 
+
 # End Source File
 # Begin Source File
 
 SOURCE=.\Encrypt.cpp
+
+!IF  "$(CFG)" == "ComService - Win32 Release"
+
+# PROP Exclude_From_Build 1
+
+!ELSEIF  "$(CFG)" == "ComService - Win32 Debug"
+
+!ENDIF 
+
 # End Source File
 # Begin Source File
 
 SOURCE=.\ServiceThread.cpp
 
 !IF  "$(CFG)" == "ComService - Win32 Release"
+
+# PROP Exclude_From_Build 1
 
 !ELSEIF  "$(CFG)" == "ComService - Win32 Debug"
 
@@ -137,7 +168,15 @@ SOURCE=.\StdAfx.cpp
 # Begin Source File
 
 SOURCE=.\XML.cpp
+
+!IF  "$(CFG)" == "ComService - Win32 Release"
+
 # PROP Exclude_From_Build 1
+
+!ELSEIF  "$(CFG)" == "ComService - Win32 Debug"
+
+!ENDIF 
+
 # End Source File
 # End Group
 # Begin Group "Header Files"
@@ -157,11 +196,11 @@ SOURCE=.\ComService.h
 # End Source File
 # Begin Source File
 
-SOURCE=".\Config-win32.h"
+SOURCE="..\Common\Config-win32.h"
 # End Source File
 # Begin Source File
 
-SOURCE=.\Config.h
+SOURCE=..\Common\Config.h
 # End Source File
 # Begin Source File
 
@@ -186,6 +225,10 @@ SOURCE=.\StdAfx.h
 # Begin Source File
 
 SOURCE=..\Common\Template.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\Common\Typedefs.h
 # End Source File
 # Begin Source File
 

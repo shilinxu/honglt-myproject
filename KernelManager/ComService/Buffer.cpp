@@ -193,14 +193,8 @@ CString CBuffer::ReadString(DWORD nBytes, UINT nCodePage)
 	LPWSTR pszWide = new WCHAR[ nLength ];
 	MultiByteToWideChar( nCodePage, 0, (LPCSTR)m_pBuffer, nSource, pszWide, nLength );
 
-	nBytes = WideCharToMultiByte( nCodePage, 0, (LPCWSTR)pszWide, nLength, NULL, 0, NULL, NULL );
-
-	LPSTR pByte = new CHAR[ nBytes ];
-	WideCharToMultiByte( nCodePage, 0, (LPCWSTR)pszWide, nLength, pByte, nBytes, NULL, NULL );
-
+	CString str( pszWide, nLength );
 	delete [] pszWide;
-	CString str( pByte, 0, nBytes );
-	delete [] pByte;
 	
 	Remove( nBytes );
 	return str;
@@ -222,18 +216,12 @@ BOOL CBuffer::ReadLine(CString& strLine, UINT nCodePage, BOOL bPeek)
 
 	LPWSTR pszWide = new WCHAR[ nWide ];
 	MultiByteToWideChar( nCodePage, 0, (LPCSTR)m_pBuffer, nLength, pszWide, nWide );
-	
-	int nBytes = WideCharToMultiByte( nCodePage, 0, (LPCWSTR)pszWide, nWide, NULL, 0, NULL, NULL );
 
-	LPSTR pByte = new CHAR[ nBytes ];
-	WideCharToMultiByte( nCodePage, 0, (LPCWSTR)pszWide, nWide, pByte, nBytes, NULL, NULL );
-
+	strLine = CString(pszWide, nWide);
 	delete [] pszWide;
-	strLine.append( pByte, nBytes);
-	delete [] pByte;
 
-	int nCR = strLine.find_last_of( '\r' );
-	if ( nCR >= 0 ) strLine = strLine.erase( nCR );
+	int nCR = strLine.ReverseFind( '\r' );
+	if ( nCR >= 0 ) strLine = strLine.Left( nCR );
 
 	if ( ! bPeek ) Remove( nLength + 1 );
 
@@ -247,7 +235,7 @@ BOOL CBuffer::StartsWith(LPCSTR pszString, BOOL bRemove)
 {
 	if ( m_nLength < (int)strlen( pszString ) ) return FALSE;
 
-	if ( strncmp( (LPCSTR)m_pBuffer, pszString, strlen( pszString ) ) ) return FALSE;
+	if ( _tcsncmp( (LPCSTR)m_pBuffer, pszString, strlen( pszString ) ) ) return FALSE;
 
 	if ( bRemove ) Remove( strlen( pszString ) );
 

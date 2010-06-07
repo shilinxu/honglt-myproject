@@ -11,11 +11,6 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
-
-// global data
-
-
-
 // The following symbol used to force inclusion of this module for _USRDLL
 
 #ifdef _X86_
