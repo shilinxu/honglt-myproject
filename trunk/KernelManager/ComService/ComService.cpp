@@ -15,6 +15,7 @@ BOOL APIENTRY DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
 	{
 	}
 	
+//	CString aa;
 	return TRUE;
 }
 #if 0

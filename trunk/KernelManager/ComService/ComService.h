@@ -10,7 +10,7 @@
 //
 
 #include "Config.h"
-#include "..\Common\Template.h"
+//#include "..\Common\Template.h"
 
 //
 // Utility
