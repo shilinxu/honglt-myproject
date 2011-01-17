@@ -1,1 +1,0 @@
-gcc  -fPIC   -shared -Wl,-soname,NetServer.so -o NetServer.so CMakeFiles/NetServer.dir/NetServer.cpp.o CMakeFiles/NetServer.dir/ProactorNetHandler.cpp.o CMakeFiles/NetServer.dir/ProactorNetAcceptor.cpp.o CMakeFiles/NetServer.dir/ProactorNetConnector.cpp.o CMakeFiles/NetServer.dir/Session.cpp.o CMakeFiles/NetServer.dir/SessionManager.cpp.o -lACE 
