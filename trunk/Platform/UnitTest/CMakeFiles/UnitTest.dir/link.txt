@@ -1,1 +1,0 @@
-/usr/bin/c++      CMakeFiles/UnitTest.dir/TestCase.cpp.o  -o /home/honglt/MyProject/Platform/Bin/UnitTest -rdynamic 
