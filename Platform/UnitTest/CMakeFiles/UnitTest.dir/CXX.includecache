@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/honglt/MyProject/Platform/UnitTest/TestCase.cpp
+Config.h
+/home/honglt/MyProject/Platform/UnitTest/Config.h
+
