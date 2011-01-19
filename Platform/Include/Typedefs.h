@@ -15,6 +15,13 @@ typedef ULONG_PTR DWORD_PTR, *PDWORD_PTR;
 typedef unsigned __int64 QWORD;
 
 //
+// string type
+//
+
+#include <string>
+typedef CString std::string;
+
+//
 // Tristate type
 //
 
