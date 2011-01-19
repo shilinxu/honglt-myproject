@@ -51,6 +51,9 @@ typedef ULONG_PTR DWORD_PTR, *PDWORD_PTR;
 // Utility
 //
 
+#define Platform_Proper_Export  __declspec(dllexport)
+#define Platform_Proper_Import  __declspec(dllimport)
+
 #if defined (AKM_EXPORT) && !defined (AKM_Export)
 #define AKM_Export __declspec (dllexport)
 #else
