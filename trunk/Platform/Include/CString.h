@@ -13,6 +13,12 @@
 #error CString custom not supported.
 #endif
 
+//
+// Definitions
+//
+
+#include <string>
+
 class CString : public std::string
 {
 // Construction
@@ -20,4 +26,4 @@ public:
     CString();
 };
 
-#enidf // _CSTRING_H__INCLUDED_
+#endif // _CSTRING_H__INCLUDED_
