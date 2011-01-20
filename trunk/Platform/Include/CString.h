@@ -19,11 +19,18 @@
 
 #include <string>
 
-class CString : public std::string
+#ifndef COM_SERVICE_H__INCLUDED_
+#include "ComService.h"
+#endif // COM_SERVICE_H__INCLUDED_
+
+class COM_SERVICE_CLASS CString : public std::string
 {
 // Construction
 public:
     CString();
+    CString(CHAR pCh);
+    CString(LPCSTR pszSrc);
+    CString(LPCSTR pszSrc, int nLength);
 };
 
 #endif // _CSTRING_H__INCLUDED_

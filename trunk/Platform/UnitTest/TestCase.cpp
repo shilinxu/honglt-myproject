@@ -4,7 +4,8 @@
 
 int Test_CString()
 {
-//    CString str;
+    CString str;
+    CString str2("tttt");
 
     return 0;
 }

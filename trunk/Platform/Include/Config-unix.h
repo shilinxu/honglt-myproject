@@ -6,6 +6,15 @@
 #define CONFIG_UNIX_H__INCLUDED_
 
 //
+// Definitions
+//
+
+typedef char CHAR;
+
+typedef /* [string] */ CHAR *LPSTR;
+typedef /* [string] */ const CHAR *LPCSTR;
+
+//
 // 64-bit type
 //
 
