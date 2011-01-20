@@ -9,9 +9,7 @@
 // Compiler
 //
 
-#if !defined (WIN32) && !defined (_WIN32_WCE)
-#include "CString.h"
-#endif
+#include "Config.h"
 
 //
 // Configuration
@@ -30,12 +28,9 @@
 #define COM_SERVICE_CLASS
 #endif // WIN32
 
-class COM_SERVICE_CLASS CString : public std::string
-{
-// Construction
-public:
-    CString();
-};
+#if !defined (WIN32) && !defined (_WIN32_WCE)
+#include "CString.h"
+#endif
 
-#enidf // _CSTRING_H__INCLUDED_
+#endif // _CSTRING_H__INCLUDED_
 

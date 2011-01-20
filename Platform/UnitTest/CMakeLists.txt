@@ -13,8 +13,14 @@ PROJECT(UnitTest)
 
 #IF(WIN32)
 #ELSEIF(UNIX)
+    set (LINK_LIB 
+        #${LIBRARY_OUTPUT_PATH}/ComService.so
+        /home/honglt/MyProject/Platform/Lib/ComService.so
+        )
 #ENDIF(WIN32)
 
+set (CMAKE_CXX_FLAGS_DEBUG "-ggdb")
+set (CMAKE_BUILD_TYPE "Debug")
 
 #aux_source_directory(UnitTest TEST_SRC)
 set (TEST_SRC
