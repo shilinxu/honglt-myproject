@@ -10,8 +10,8 @@ PROJECT(ComService)
 
 
 set (SRC_LIST
-    CString.cpp
-    #ComService.cpp
+#   CString.cpp
+#   ComService.cpp
     )
 
 #include_directories(${INC_DIR})
