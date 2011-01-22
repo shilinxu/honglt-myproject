@@ -3,11 +3,18 @@
 
 #include "CString.h"
 
+#include <iostream>
+
+using namespace std;
+
 int Test_CString()
 {
-    CString str;
-    CString str2("tttt");
+    CString str("tttt", 3);
+    CString str2 = str;
 //    CString str3((LPCWSTR)"ssdsd");
+    cout << "Hello world!" << endl;
+    cout << str2 << endl;
+
 
     return 0;
 }
