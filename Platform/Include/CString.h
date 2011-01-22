@@ -126,65 +126,136 @@ inline void Assign(std::string& strDst, LPCWSTR pszSrc)
     strDst.assign(pszSrc ? W2CA(pszSrc) : "");
 }
 
+inline void Assadd(std::string& strDst, LPCSTR pszSrc)
+{
+    if ( pszSrc ) strDst.append( pszSrc );
+}
+
 //
-// class CStringBase
+// class CStringT
 //
 
 template <typename TYPE>
-class CStringBase : public std::basic_string<TYPE>
+class CStringT : public std::basic_string<TYPE>
 {
+// Definitions
+private:
+    typedef typename std::basic_string<TYPE>    BaseT;
+//    typedef CStringT<TYPE>                      StringT;
+    typedef typename BaseT::pointer             PStrT;
+    typedef typename BaseT::const_pointer       PCStrT;
+    typedef typename BaseT::size_type           SizeT;
+
 // Construction
 public:
-    CStringBase();
-    CStringBase(LPCSTR pszSrc);
-    CStringBase(LPCWSTR pszSrc);
+    CStringT();
+    CStringT(LPCSTR pszSrc);
+    CStringT(LPCWSTR pszSrc);
+    CStringT(PCStrT pszSrc, SizeT nLength);
+//    CStringT(const StringT& strSrc);
+//    CString(const std::string& strSrc);
+//    CString(const std::wstring& strSrc);
 
 // Operations
 public:
-    CStringBase<TYPE>& operator=(LPCSTR pszSrc);
-    CStringBase<TYPE>& operator=(LPCWSTR pszSrc);
+    CStringT<TYPE>& operator=(LPCSTR pszSrc);
+    CStringT<TYPE>& operator=(LPCWSTR pszSrc);
+    CStringT<TYPE>& operator=(const std::string& pszSrc);
+    CStringT<TYPE>& operator=(const std::wstring& pszSrc);
+    CStringT<TYPE>& operator=(const CStringT<TYPE>& pszSrc);
+    CStringT<TYPE>& operator+=(LPCSTR pszSrc);
+public:
+
 //    int         GetLength() const;
 };
 
 //////////////////////////////////////////////////////////////////////
-// CStringBase construction
+// CStringT construction
 
 template <typename TYPE>
-CStringBase<TYPE>::CStringBase()
+CStringT<TYPE>::CStringT()
 {
 }
 
 template <typename TYPE>
-CStringBase<TYPE>::CStringBase(LPCSTR pszSrc)
+CStringT<TYPE>::CStringT(LPCSTR pszSrc)
 {
     if ( pszSrc ) *this = pszSrc;
 }
 
 template <typename TYPE>
-CStringBase<TYPE>::CStringBase(LPCWSTR pszSrc)
+CStringT<TYPE>::CStringT(PCStrT pszSrc, SizeT nLength) : BaseT(pszSrc, nLength)
+{
+}
+
+template <typename TYPE>
+CStringT<TYPE>::CStringT(LPCWSTR pszSrc)
 {
     if ( pszSrc ) this->append( pszSrc );
 }
+//
+//template <typename TYPE>
+//CStringT<TYPE>::CStringT(const StringT& strSrc) : BaseT(strSrc)
+//{
+//}
+//
+//template <typename TYPE>
+//CStringT<TYPE>::CStringT(const std::string& strSrc)
+//{
+//    *this = 
+//}
+
 
 //////////////////////////////////////////////////////////////////////
-// CStringBase attributes
+// CStringT attributes
 
 template <typename TYPE>
-CStringBase<TYPE>& CStringBase<TYPE>::operator=(LPCSTR pszSrc)
+CStringT<TYPE>& CStringT<TYPE>::operator=(LPCSTR pszSrc)
 {
     ::Assign(*this, pszSrc); return *this;
 }
 
 template <typename TYPE>
-CStringBase<TYPE>& CStringBase<TYPE>::operator=(LPCWSTR pszSrc)
+CStringT<TYPE>& CStringT<TYPE>::operator=(LPCWSTR pszSrc)
 {
     ::Assign(*this, pszSrc); return *this;
+}
+
+template <typename TYPE>
+CStringT<TYPE>& CStringT<TYPE>::operator=(const std::string& pszSrc)
+{
+    ::Assign(*this, pszSrc); return *this;
+}
+
+template <typename TYPE>
+CStringT<TYPE>& CStringT<TYPE>::operator=(const std::wstring& pszSrc)
+{
+    ::Assign(*this, pszSrc); return *this;
+}
+
+template <typename TYPE>
+CStringT<TYPE>& CStringT<TYPE>::operator=(const CStringT<TYPE>& pszSrc)
+{
+    ::Assign(*this, pszSrc); return *this;
+}
+
+template <typename TYPE>
+CStringT<TYPE>& CStringT<TYPE>::operator+=(LPCSTR pszSrc)
+{
+    ::Assadd(*this, pszSrc); return *this;
 }
 
 //
 // Configuration
 //
 
-typedef CStringBase<CHAR> CString;
+typedef CStringT<CHAR>  CStringA;
+typedef CStringT<WCHAR> CStringW;
+
+#ifdef UNICODE
+    #define CString     CStringW
+#else
+    #define CString     CStringA
+#endif
 
 #endif // _CSTRING_H__INCLUDED_
