@@ -10,7 +10,7 @@ using namespace std;
 int Test_CString()
 {
     CString str("tttt", 3);
-    CString str2 = str;
+    CString str2 = str.c_str();
 //    CString str3((LPCWSTR)"ssdsd");
     cout << "Hello world!" << endl;
     cout << str2 << endl;

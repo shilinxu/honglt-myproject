@@ -131,6 +131,12 @@ inline void Assadd(std::string& strDst, LPCSTR pszSrc)
     if ( pszSrc ) strDst.append( pszSrc );
 }
 
+inline void Assadd(std::string& strDst, LPCWSTR pszSrc)
+{
+    USES_CONVERSION;
+    if ( pszSrc ) strDst.append( W2CA(pszSrc) );
+}
+
 //
 // class CStringT
 //
@@ -160,12 +166,17 @@ public:
 public:
     CStringT<TYPE>& operator=(LPCSTR pszSrc);
     CStringT<TYPE>& operator=(LPCWSTR pszSrc);
-    CStringT<TYPE>& operator=(const std::string& pszSrc);
-    CStringT<TYPE>& operator=(const std::wstring& pszSrc);
+//    CStringT<TYPE>& operator=(const std::string& pszSrc);
+//    CStringT<TYPE>& operator=(const std::wstring& pszSrc);
     CStringT<TYPE>& operator=(const CStringT<TYPE>& pszSrc);
     CStringT<TYPE>& operator+=(LPCSTR pszSrc);
+    CStringT<TYPE>& operator+=(LPCWSTR pszSrc);
+//    CStringT<TYPE>& operator+=(const std::string& pszSrc);
+    CStringT<TYPE>& operator+=(const CStringT<TYPE>& pszSrc);
 public:
-
+    friend CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, const CStringT<TYPE>& strAdd);
+    friend CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, LPCSTR pszAdd);
+    friend CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, LPCWSTR pszAdd);
 //    int         GetLength() const;
 };
 
@@ -220,18 +231,18 @@ CStringT<TYPE>& CStringT<TYPE>::operator=(LPCWSTR pszSrc)
 {
     ::Assign(*this, pszSrc); return *this;
 }
-
-template <typename TYPE>
-CStringT<TYPE>& CStringT<TYPE>::operator=(const std::string& pszSrc)
-{
-    ::Assign(*this, pszSrc); return *this;
-}
-
-template <typename TYPE>
-CStringT<TYPE>& CStringT<TYPE>::operator=(const std::wstring& pszSrc)
-{
-    ::Assign(*this, pszSrc); return *this;
-}
+//
+//template <typename TYPE>
+//CStringT<TYPE>& CStringT<TYPE>::operator=(const std::string& pszSrc)
+//{
+//    ::Assign(*this, pszSrc); return *this;
+//}
+//
+//template <typename TYPE>
+//CStringT<TYPE>& CStringT<TYPE>::operator=(const std::wstring& pszSrc)
+//{
+//    ::Assign(*this, pszSrc); return *this;
+//}
 
 template <typename TYPE>
 CStringT<TYPE>& CStringT<TYPE>::operator=(const CStringT<TYPE>& pszSrc)
@@ -243,6 +254,46 @@ template <typename TYPE>
 CStringT<TYPE>& CStringT<TYPE>::operator+=(LPCSTR pszSrc)
 {
     ::Assadd(*this, pszSrc); return *this;
+}
+
+template <typename TYPE>
+CStringT<TYPE>& CStringT<TYPE>::operator+=(LPCWSTR pszSrc)
+{
+    ::Assadd(*this, pszSrc); return *this;
+}
+//
+//template <typename TYPE>
+//CStringT<TYPE>& CStringT<TYPE>::operator+=(const std::string& pszSrc)
+//{
+//    ::Assign(*this, pszSrc); return *this;
+//}
+
+template <typename TYPE>
+CStringT<TYPE>& CStringT<TYPE>::operator+=(const CStringT<TYPE>& pszSrc)
+{
+    ::Assign(*this, pszSrc); return *this;
+}
+
+//////////////////////////////////////////////////////////////////////
+// CStringT friend functions
+
+template <typename TYPE>
+CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, const CStringT<TYPE>& strAdd)
+{
+    CStringT<TYPE> strRet(strSrc);
+    strRet.append(strAdd); return strRet;
+}
+
+template <typename TYPE>
+CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, LPCSTR pszAdd)
+{
+    return CStringT<TYPE>(strSrc) + CStringT<TYPE>(pszAdd);
+}
+
+template <typename TYPE>
+CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, LPCWSTR pszAdd)
+{
+    return CStringT<TYPE>(strSrc) + CStringT<TYPE>(pszAdd);
 }
 
 //
