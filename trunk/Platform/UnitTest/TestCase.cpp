@@ -14,6 +14,9 @@ int Test_CString()
 //    CString str3((LPCWSTR)"ssdsd");
     cout << "Hello world!" << endl;
     cout << str2 << endl;
+    cout << str2.GetBuffer(2) << endl;
+
+    str2.Insert(2,"123");
 
 
     return 0;
