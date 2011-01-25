@@ -16,12 +16,18 @@ typedef unsigned long DWORD;
 
 typedef char CHAR;
 typedef wchar_t WCHAR;
+typedef unsigned char UCHAR;
 
 typedef /* [string] */ CHAR *LPSTR;
 typedef /* [string] */ const CHAR *LPCSTR;
 
 typedef /* [string] */ WCHAR *LPWSTR;
 typedef /* [string] */ const WCHAR *LPCWSTR;
+
+/* Minimum and maximum macros */
+
+#define __max(a,b)  (((a) > (b)) ? (a) : (b))
+#define __min(a,b)  (((a) < (b)) ? (a) : (b))
 
 //
 // 64-bit type

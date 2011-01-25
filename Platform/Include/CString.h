@@ -146,23 +146,54 @@ class CStringT : public std::basic_string<TYPE>
 {
 // Definitions
 private:
-    typedef typename std::basic_string<TYPE>    BaseT;
+    typedef typename std::basic_string<TYPE>    BASE_T;
 //    typedef CStringT<TYPE>                      StringT;
-    typedef typename BaseT::pointer             PStrT;
-    typedef typename BaseT::const_pointer       PCStrT;
-    typedef typename BaseT::size_type           SizeT;
+    typedef typename BASE_T::pointer            PSTR_T;
+    typedef typename BASE_T::const_pointer      PCSTR_T;
+    typedef typename BASE_T::size_type          SIZE_T;
 
 // Construction
 public:
     CStringT();
     CStringT(LPCSTR pszSrc);
     CStringT(LPCWSTR pszSrc);
-    CStringT(PCStrT pszSrc, SizeT nLength);
+    CStringT(PCSTR_T pszSrc, SIZE_T nLength);
 //    CStringT(const StringT& strSrc);
 //    CString(const std::string& strSrc);
 //    CString(const std::wstring& strSrc);
 
 // Operations
+public:
+    TYPE            GetAt(int nIndex) const;
+    TYPE*           GetBuffer(int nMinLength);
+    TYPE*           SetBuffer(int nLength);
+    //CStringT<TYPE>& ToUpper();
+public:
+    void            Empty() { BASE_T::erase(); }
+    bool            IsEmpty() const { return BASE_T::empty(); }
+    int             GetLength() const { return static_cast<int>(BASE_T::length()); }
+public:
+    CStringT<TYPE>  Mid(int nFirst) const;
+    CStringT<TYPE>  Mid(int nFirst, int nCount) const;
+    CStringT<TYPE>  Left(int nCount) const;
+    CStringT<TYPE>  Right(int nCount) const;
+    int             Delete(int nIndex, int nCount = 1);
+    int             Insert(int nIndex, TYPE ch);
+    int             Insert(int nIndex, PCSTR_T pszSrc);
+public:
+    int             Find(TYPE ch) const;
+    int             Find(TYPE ch, int nStart) const;
+    int             Find(PCSTR_T pszSrc) const;
+    int             Find(PCSTR_T pszSrc, int nStart) const;
+    int             FindOneOf(PCSTR_T szCharSet) const;
+    int             ReverseFind(TYPE ch) const;
+    int             ReverseFind(PCSTR_T pszSrc, SIZE_T pos=BASE_T::npos) const;
+    int             Remove(TYPE ch);
+    void            ReleaseBuffer(int nNewLength = -1);
+public:
+    void            MakeLower() { BASE_T::_mbsupr( (UCHAR*)GetBuffer() ); }
+    void            MakeUpper() { BASE_T::_mbsupr( (UCHAR*)GetBuffer() ); }
+    void            MakeReverse() { BASE_T::reverse(BASE_T::begin(), BASE_T::end()); }
 public:
     CStringT<TYPE>& operator=(LPCSTR pszSrc);
     CStringT<TYPE>& operator=(LPCWSTR pszSrc);
@@ -174,10 +205,9 @@ public:
 //    CStringT<TYPE>& operator+=(const std::string& pszSrc);
     CStringT<TYPE>& operator+=(const CStringT<TYPE>& pszSrc);
 public:
-    friend CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, const CStringT<TYPE>& strAdd);
     friend CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, LPCSTR pszAdd);
     friend CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, LPCWSTR pszAdd);
-//    int         GetLength() const;
+    friend CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, const CStringT<TYPE>& strAdd);
 };
 
 //////////////////////////////////////////////////////////////////////
@@ -195,7 +225,7 @@ CStringT<TYPE>::CStringT(LPCSTR pszSrc)
 }
 
 template <typename TYPE>
-CStringT<TYPE>::CStringT(PCStrT pszSrc, SizeT nLength) : BaseT(pszSrc, nLength)
+CStringT<TYPE>::CStringT(PCSTR_T pszSrc, SIZE_T nLength) : BASE_T(pszSrc, nLength)
 {
 }
 
@@ -206,19 +236,49 @@ CStringT<TYPE>::CStringT(LPCWSTR pszSrc)
 }
 //
 //template <typename TYPE>
-//CStringT<TYPE>::CStringT(const StringT& strSrc) : BaseT(strSrc)
+//CStringT<TYPE>::CStringT(const StringT& strSrc) : BASE_T(strSrc)
 //{
 //}
 //
 //template <typename TYPE>
 //CStringT<TYPE>::CStringT(const std::string& strSrc)
 //{
-//    *this = 
+//    *this =
 //}
 
 
 //////////////////////////////////////////////////////////////////////
 // CStringT attributes
+//
+//template <typename TYPE>
+//int CStringT<TYPE>::GetLength() const
+//{
+//    return static_cast<int>(BASE_T::length());
+//}
+
+template <typename TYPE>
+TYPE CStringT<TYPE>::GetAt(int nIndex) const
+{
+    return at(static_cast<SIZE_T>(nIndex));
+}
+
+template <typename TYPE>
+TYPE* CStringT<TYPE>::GetBuffer(int nMinLength)
+{
+    if ( static_cast<int>(BASE_T::size()) < nMinLength )
+        resize( static_cast<SIZE_T>(nMinLength) );
+    return BASE_T::empty() ? const_cast<TYPE*>(BASE_T::data()) : &(BASE_T::at(0));
+}
+
+template <typename TYPE>
+TYPE* CStringT<TYPE>::SetBuffer(int nLength)
+{
+    ASSERT( nLength >= 0 );
+    if ( BASE_T::capacity() < 1 && ! nLength ) BASE_T::resize(1);
+
+    resize(static_cast<SIZE_T>(nLength) );
+    return const_cast<TYPE*>(BASE_T::data());
+}
 
 template <typename TYPE>
 CStringT<TYPE>& CStringT<TYPE>::operator=(LPCSTR pszSrc)
@@ -272,6 +332,133 @@ template <typename TYPE>
 CStringT<TYPE>& CStringT<TYPE>::operator+=(const CStringT<TYPE>& pszSrc)
 {
     ::Assign(*this, pszSrc); return *this;
+}
+
+//////////////////////////////////////////////////////////////////////
+// CStringT operations
+
+template <typename TYPE>
+int CStringT<TYPE>::Insert(int nIndex, TYPE ch)
+{
+    if ( static_cast<SIZE_T>(nIndex) > BASE_T::szie() - 1 ) append(1, ch);
+    else insert(static_cast<SIZE_T>(nIndex), 1, ch);
+
+    return GetLength();
+}
+
+template <typename TYPE>
+int CStringT<TYPE>::Insert(int nIndex, PCSTR_T pszSrc)
+{
+    if ( nIndex >= BASE_T::size() ) append(pszSrc, std::char_traits<TYPE>::length(pszSrc));
+    else insert(static_cast<SIZE_T>(nIndex), pszSrc);
+
+    return GetLength();
+}
+
+template <typename TYPE>
+int CStringT<TYPE>::Delete(int nIndex, int nCount)
+{
+    if ( nIndex < GetLength() ) erase(static_cast<SIZE_T>(nIndex), static_cast<SIZE_T>(nCount));
+    return GetLength();
+}
+
+template <typename TYPE>
+CStringT<TYPE> CStringT<TYPE>::Mid(int nFirst) const
+{
+    return substr(static_cast<SIZE_T>(nFirst));
+}
+
+template <typename TYPE>
+CStringT<TYPE> CStringT<TYPE>::Mid(int nFirst, int nCount) const
+{
+    return substr(static_cast<SIZE_T>(nFirst), static_cast<SIZE_T>(nCount));
+}
+
+template <typename TYPE>
+CStringT<TYPE> CStringT<TYPE>::Left(int nCount) const
+{
+    return substr(0, static_cast<SIZE_T>(nCount));
+}
+
+template <typename TYPE>
+CStringT<TYPE> CStringT<TYPE>::Right(int nCount) const
+{
+    nCount = __min(nCount, static_cast<int>(BASE_T::size()));
+    return substr(BASE_T::size() - static_cast<SIZE_T>(nCount));
+}
+
+//template <typename TYPE>
+//CStringT<TYPE>& CStringT<TYPE>::MakeUpper()
+//{
+//    BASE_T::_mbsupr( (UCHAR*)GetBuffer() ); return *this;
+//}
+
+template <typename TYPE>
+int CStringT<TYPE>::Find(TYPE ch) const
+{
+    SIZE_T nIndex = find_first_of( ch );
+    return static_cast<int>(BASE_T::npos == nIndex ? -1 : nIndex);
+}
+
+template <typename TYPE>
+int CStringT<TYPE>::Find(TYPE ch, int nStart) const
+{
+    SIZE_T nIndex = find_first_of(ch, static_cast<SIZE_T>(nStart));
+    return static_cast<int>(BASE_T::npos == nIndex ? -1 : nIndex);
+}
+
+template <typename TYPE>
+int CStringT<TYPE>::Find(PCSTR_T pszSrc) const
+{
+    SIZE_T nIndex = find( pszSrc );
+    return static_cast<int>(BASE_T::npos == nIndex ? -1 : nIndex);
+}
+
+template <typename TYPE>
+int CStringT<TYPE>::Find(PCSTR_T pszSrc, int nStart) const
+{
+    SIZE_T nIndex = find(pszSrc, static_cast<SIZE_T>(nStart));
+    return static_cast<int>(BASE_T::npos == nIndex ? -1 : nIndex);
+}
+
+template <typename TYPE>
+int CStringT<TYPE>::FindOneOf(PCSTR_T szCharSet) const
+{
+    SIZE_T nIndex = find_first_of( szCharSet );
+    return static_cast<int>(BASE_T::npos == nIndex ? -1 : nIndex);
+}
+
+template <typename TYPE>
+int CStringT<TYPE>::ReverseFind(TYPE ch) const
+{
+    SIZE_T nIndex = find_last_of( ch );
+    return static_cast<int>(BASE_T::npos == nIndex ? -1 : nIndex);
+}
+
+template <typename TYPE>
+int CStringT<TYPE>::ReverseFind(PCSTR_T pszSrc, SIZE_T pos) const
+{
+    SIZE_T nIndex = rfind(NULL == pszSrc ? CStringT<TYPE>() : pszSrc, pos);
+    return static_cast<int>(BASE_T::npos == nIndex ? -1 : nIndex);
+}
+
+template <typename TYPE>
+int CStringT<TYPE>::Remove(TYPE ch)
+{
+    SIZE_T nIndex   = 0;
+    int nRemoved    = 0;
+
+    while( (nIndex=find_first_of(ch)) != BASE_T::npos )
+    {
+        erase(nIndex, 1); nRemoved++;
+    }
+    return nRemoved;
+}
+
+template <typename TYPE>
+void CStringT<TYPE>::ReleaseBuffer(int nNewLength)
+{
+    resize(static_cast<SIZE_T>(nNewLength > -1 ? nNewLength : BASE_T::length()));
 }
 
 //////////////////////////////////////////////////////////////////////
