@@ -138,6 +138,17 @@ inline void Assadd(std::string& strDst, LPCWSTR pszSrc)
 }
 
 //
+// struct NotSpace
+//
+
+template <typename TYPE>
+struct NotSpace : public std::unary_function<TYPE, bool>
+{
+    const std::locale& loc;
+    NotSpace(const std::locale&locArd) : loc(locArd) {}
+};
+
+//
 // class CStringT
 //
 
@@ -150,6 +161,9 @@ private:
 //    typedef CStringT<TYPE>                      StringT;
     typedef typename BASE_T::pointer            PSTR_T;
     typedef typename BASE_T::const_pointer      PCSTR_T;
+    typedef typename BASE_T::iterator           PITER_T;
+    typedef typename BASE_T::const_iterator     PCITER_T;
+    typedef typename BASE_T::reverse_iterator   PRITER_T;
     typedef typename BASE_T::size_type          SIZE_T;
 
 // Construction
@@ -166,6 +180,7 @@ public:
 public:
     TYPE            GetAt(int nIndex) const;
     TYPE*           GetBuffer(int nMinLength);
+    void            SetAt(int nIndex, TYPE ch);
     TYPE*           SetBuffer(int nLength);
     //CStringT<TYPE>& ToUpper();
 public:
@@ -190,10 +205,19 @@ public:
     int             ReverseFind(PCSTR_T pszSrc, SIZE_T pos=BASE_T::npos) const;
     int             Remove(TYPE ch);
     void            ReleaseBuffer(int nNewLength = -1);
+    void            FreeExtra();
 public:
+    CStringT<TYPE>& TrimLeft();
+    CStringT<TYPE>& TrimLeft(TYPE chTarget);
+    CStringT<TYPE>& TrimLeft(PCSTR_T pszTargets);
+    CStringT<TYPE>& TrimRight();
+    CStringT<TYPE>& TrimRight(TYPE chTarget);
+    CStringT<TYPE>& TrimRight(PCSTR_T pszTargets);
     void            MakeLower() { BASE_T::_mbsupr( (UCHAR*)GetBuffer() ); }
     void            MakeUpper() { BASE_T::_mbsupr( (UCHAR*)GetBuffer() ); }
     void            MakeReverse() { BASE_T::reverse(BASE_T::begin(), BASE_T::end()); }
+    CStringT<TYPE>  SpanExcluding(PCSTR_T szCharSet) const { return Left(find_first_of(szCharSet)); }
+    CStringT<TYPE>  SpanIncluding(PCSTR_T szCharSet) const { return Left(find_first_not_of(szCharSet)); }
 public:
     CStringT<TYPE>& operator=(LPCSTR pszSrc);
     CStringT<TYPE>& operator=(LPCWSTR pszSrc);
@@ -204,10 +228,22 @@ public:
     CStringT<TYPE>& operator+=(LPCWSTR pszSrc);
 //    CStringT<TYPE>& operator+=(const std::string& pszSrc);
     CStringT<TYPE>& operator+=(const CStringT<TYPE>& pszSrc);
+    const TYPE      operator[](int nIndex) const;
+    operator const  TYPE*() const { return BASE_T::c_str(); }
 public:
-    friend CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, LPCSTR pszAdd);
-    friend CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, LPCWSTR pszAdd);
-    friend CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, const CStringT<TYPE>& strAdd);
+    friend CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, PCSTR_T pszAdd)
+    {
+        return CStringT<TYPE>(strSrc) + CStringT<TYPE>(pszAdd);
+    }
+//    friend CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, LPCWSTR pszAdd)
+//    {
+//        return CStringT<TYPE>(strSrc) + CStringT<TYPE>(pszAdd);
+//    }
+    friend CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, const CStringT<TYPE>& strAdd)
+    {
+        CStringT<TYPE> strRet(strSrc);
+        strRet.append(strAdd); return strRet;
+    }
 };
 
 //////////////////////////////////////////////////////////////////////
@@ -232,7 +268,7 @@ CStringT<TYPE>::CStringT(PCSTR_T pszSrc, SIZE_T nLength) : BASE_T(pszSrc, nLengt
 template <typename TYPE>
 CStringT<TYPE>::CStringT(LPCWSTR pszSrc)
 {
-    if ( pszSrc ) this->append( pszSrc );
+    if ( pszSrc ) *this = pszSrc;
 }
 //
 //template <typename TYPE>
@@ -268,6 +304,13 @@ TYPE* CStringT<TYPE>::GetBuffer(int nMinLength)
     if ( static_cast<int>(BASE_T::size()) < nMinLength )
         resize( static_cast<SIZE_T>(nMinLength) );
     return BASE_T::empty() ? const_cast<TYPE*>(BASE_T::data()) : &(BASE_T::at(0));
+}
+
+template <typename TYPE>
+void CStringT<TYPE>::SetAt(int nIndex, TYPE ch)
+{
+    ASSERT(BASE_T::size() > static_cast<SIZE_T>(nIndex));
+    at(static_cast<SIZE_T>(nIndex)) = ch;
 }
 
 template <typename TYPE>
@@ -332,6 +375,12 @@ template <typename TYPE>
 CStringT<TYPE>& CStringT<TYPE>::operator+=(const CStringT<TYPE>& pszSrc)
 {
     ::Assign(*this, pszSrc); return *this;
+}
+
+template <typename TYPE>
+const TYPE CStringT<TYPE>::operator[](int nIndex) const
+{
+    return BASE_T::operator[](static_cast<SIZE_T>(nIndex));
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -461,27 +510,81 @@ void CStringT<TYPE>::ReleaseBuffer(int nNewLength)
     resize(static_cast<SIZE_T>(nNewLength > -1 ? nNewLength : BASE_T::length()));
 }
 
+template <typename TYPE>
+void CStringT<TYPE>::FreeExtra()
+{
+    CStringT<TYPE> mt; swap(mt);
+    if( ! mt.empty() ) BASE_T::assign(mt, mt.size());
+}
+
+template <typename TYPE>
+CStringT<TYPE>& CStringT<TYPE>::TrimLeft()
+{
+    erase(BASE_T::begin(), BASE_T::find_if(BASE_T::begin(),\
+          BASE_T::end(),NotSpace<TYPE>(std::locale())));
+    return *this;
+}
+
+template <typename TYPE>
+CStringT<TYPE>& CStringT<TYPE>::TrimLeft(TYPE chTarget)
+{
+    erase(0, find_first_not_of(chTarget)); return *this;
+}
+
+template <typename TYPE>
+CStringT<TYPE>& CStringT<TYPE>::TrimLeft(PCSTR_T pszTargets)
+{
+    erase(0, find_first_not_of(pszTargets)); return *this;
+}
+
+template <typename TYPE>
+CStringT<TYPE>& CStringT<TYPE>::TrimRight()
+{
+    std::locale loc;
+    PRITER_T it = BASE_T::find_if(BASE_T::rbegin(), BASE_T::rend(), NotSpace<TYPE>(loc));
+
+    if ( BASE_T::rend() != it ) erase(BASE_T::rend() - it);
+    erase(it != BASE_T::rend() ? find_last_of(*it) + 1 : 0);
+    return *this;
+}
+
+template <typename TYPE>
+CStringT<TYPE>& CStringT<TYPE>::TrimRight(TYPE chTarget)
+{
+    SIZE_T nIndex = find_last_not_of(chTarget);
+    erase(BASE_T::npos == nIndex ? 0 : ++nIndex);
+    return *this;
+}
+
+template <typename TYPE>
+CStringT<TYPE>& CStringT<TYPE>::TrimRight(PCSTR_T pszTargets)
+{
+    SIZE_T nIndex = find_last_not_of(pszTargets);
+    erase(BASE_T::npos == nIndex ? 0 : ++nIndex);
+    return *this;
+}
+
 //////////////////////////////////////////////////////////////////////
 // CStringT friend functions
-
-template <typename TYPE>
-CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, const CStringT<TYPE>& strAdd)
-{
-    CStringT<TYPE> strRet(strSrc);
-    strRet.append(strAdd); return strRet;
-}
-
-template <typename TYPE>
-CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, LPCSTR pszAdd)
-{
-    return CStringT<TYPE>(strSrc) + CStringT<TYPE>(pszAdd);
-}
-
-template <typename TYPE>
-CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, LPCWSTR pszAdd)
-{
-    return CStringT<TYPE>(strSrc) + CStringT<TYPE>(pszAdd);
-}
+//
+//template <typename TYPE>
+//CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, const CStringT<TYPE>& strAdd)
+//{
+//    CStringT<TYPE> strRet(strSrc);
+//    strRet.append(strAdd); return strRet;
+//}
+//
+//template <typename TYPE>
+//CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, LPCSTR pszAdd)
+//{
+//    return CStringT<TYPE>(strSrc) + CStringT<TYPE>(pszAdd);
+//}
+//
+//template <typename TYPE>
+//CStringT<TYPE> operator+(const CStringT<TYPE>& strSrc, LPCWSTR pszAdd)
+//{
+//    return CStringT<TYPE>(strSrc) + CStringT<TYPE>(pszAdd);
+//}
 
 //
 // Configuration
