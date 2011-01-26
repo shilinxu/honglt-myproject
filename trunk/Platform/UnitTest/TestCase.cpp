@@ -9,6 +9,21 @@ using namespace std;
 
 int Test_CString()
 {
+    CString ss((WCHAR*)"123");
+    ss.Empty();
+    ss="123";
+    cout << ss.GetLength() << "-->" << (LPCSTR)ss << endl;
+    ss+="456";
+    cout << ss.GetLength() << "-->" << (LPCSTR)ss << endl;
+    ss+=(WCHAR*)"789";
+    int iii=ss.GetLength();
+    cout << iii << endl;
+    cout << ss.GetLength() << "-->" << (LPCSTR)ss << endl;
+    ss+"456";
+    cout << ss.GetLength() << "-->" << (LPCSTR)ss << endl;
+    ss+(WCHAR*)"789";
+    cout << ss.GetLength() << "-->" << (LPCSTR)ss << endl;
+
     CString str("tttt", 3);
     CString str2 = str.c_str();
 //    CString str3((LPCWSTR)"ssdsd");
