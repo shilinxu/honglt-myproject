@@ -6,8 +6,16 @@
 #define CONFIG_UNIX_H__INCLUDED_
 
 //
+// Configuration
+//
+
+#include <stdlib.h>
+
+//
 // Definitions
 //
+
+typedef bool BOOL;
 
 typedef unsigned char BYTE;
 typedef unsigned short WORD;
@@ -28,6 +36,11 @@ typedef /* [string] */ const WCHAR *LPCWSTR;
 
 #define __max(a,b)  (((a) > (b)) ? (a) : (b))
 #define __min(a,b)  (((a) < (b)) ? (a) : (b))
+
+#define MoveMemory(Destination,Source,Length) memmove((Destination),(Source),(Length))
+#define CopyMemory(Destination,Source,Length) memcpy((Destination),(Source),(Length))
+#define FillMemory(Destination,Length,Fill) memset((Destination),(Fill),(Length))
+#define ZeroMemory(Destination,Length) memset((Destination),0,(Length))
 
 //
 // 64-bit type
