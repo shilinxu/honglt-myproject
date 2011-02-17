@@ -4,17 +4,19 @@ INCLUDE (../Platform.cmake)
 
 PROJECT(ComService)
 
-#IF(WIN32)
-#ELSEIF(UNIX)
-#ENDIF(WIN32)
-
-
-set (SRC_LIST
-#   CString.cpp
+IF(WIN32)
+ELSEIF(UNIX)
+    set (INC_DIR
+            ../Include)
+    set (SRC_LIST
+            Buffer.cpp
 #   ComService.cpp
     )
+ENDIF(WIN32)
 
-#include_directories(${INC_DIR})
+
+
+include_directories(${INC_DIR})
 add_library(ComService SHARED ${SRC_LIST})
 
 IF(WIN32)
