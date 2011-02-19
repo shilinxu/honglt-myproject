@@ -32,6 +32,16 @@ typedef /* [string] */ const CHAR *LPCSTR;
 typedef /* [string] */ WCHAR *LPWSTR;
 typedef /* [string] */ const WCHAR *LPCWSTR;
 
+/* Boolean macros */
+
+#ifndef FALSE
+#define FALSE   0
+#endif
+
+#ifndef TRUE
+#define TRUE    1
+#endif
+
 /* Minimum and maximum macros */
 
 #define __max(a,b)  (((a) > (b)) ? (a) : (b))
