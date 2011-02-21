@@ -47,9 +47,14 @@ public:
 	void		EnsureBuffer(DWORD nLength);
 public:
 	BOOL		Read(void* pData, DWORD nLength);
-//	CString		ReadString(DWORD nBytes, UINT nCodePage = CP_ACP);
-//	BOOL		ReadLine(CString& strLine, UINT nCodePage = CP_ACP, BOOL bPeek = FALSE);
-//	BOOL		StartsWith(LPCSTR pszString, DWORD nLength, BOOL bRemove = FALSE);
+#ifdef WIN32
+	CString		ReadString(DWORD nBytes, UINT nCodePage = CP_ACP);
+	BOOL		ReadLine(CString& strLine, UINT nCodePage = CP_ACP, BOOL bPeek = FALSE);
+#else
+	CString		ReadString(DWORD nBytes);
+	BOOL		ReadLine(CString& strLine, BOOL bPeek = FALSE);
+#endif // WIN32
+	BOOL		StartsWith(LPCSTR pszString, DWORD nLength, BOOL bRemove = FALSE) throw();
 public:
 	static void ReverseBuffer(const void* pInput, void* pOutput, DWORD nLength);
 };

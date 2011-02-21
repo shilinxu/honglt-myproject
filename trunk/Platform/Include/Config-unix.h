@@ -42,6 +42,26 @@ typedef /* [string] */ const WCHAR *LPCWSTR;
 #define TRUE    1
 #endif
 
+/* string macros */
+
+#ifdef UNICODE
+#define TCHAR       WCHAR
+#define LPTSTR      LPWSTR
+#define LPCTSTR     LPCWSTR
+#else
+#define TCHAR       CHAR
+#define LPTSTR      LPSTR
+#define LPCTSTR     LPCSTR
+#endif // UNICODE
+
+#ifdef UNICODE
+#define lstrlen     wcslen
+#define _stprintf   swprintf
+#else
+#define lstrlen     strlen
+#define _stprintf   sprintf
+#endif // UNICODE
+
 /* Minimum and maximum macros */
 
 #define __max(a,b)  (((a) > (b)) ? (a) : (b))

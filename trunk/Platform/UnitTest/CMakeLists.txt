@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 
-INCLUDE (../Platform.cmake)
+#INCLUDE (../Platform.cmake)
 
 #测试项目
 PROJECT(UnitTest)

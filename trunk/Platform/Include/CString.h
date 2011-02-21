@@ -426,7 +426,7 @@ CStringT<TYPE> CStringT<TYPE>::Mid(int nFirst, int nCount) const
 template <typename TYPE>
 CStringT<TYPE> CStringT<TYPE>::Left(int nCount) const
 {
-    return substr(0, static_cast<SIZE_T>(nCount));
+    return substr(0, static_cast<SIZE_T>(nCount)).c_str();
 }
 
 template <typename TYPE>

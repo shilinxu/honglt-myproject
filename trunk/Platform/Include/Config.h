@@ -15,6 +15,13 @@
 #include "Config-unix.h"
 #endif // WIN32
 
+//
+// Configuration
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+
 #if 0
 //
 // Utility

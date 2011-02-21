@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 
-INCLUDE (../Platform.cmake)
+#INCLUDE (../Platform.cmake)
 
 PROJECT(ComService)
 
@@ -10,6 +10,8 @@ ELSEIF(UNIX)
             ../Include)
     set (SRC_LIST
             Buffer.cpp
+            Randomize.cpp
+            Encrypt.cpp
 #   ComService.cpp
     )
 ENDIF(WIN32)

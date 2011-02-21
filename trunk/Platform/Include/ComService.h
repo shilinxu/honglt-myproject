@@ -32,5 +32,7 @@
 #include "CString.h"
 #endif
 
+#include <sys/time.h>
+
 #endif // _CSTRING_H__INCLUDED_
 
