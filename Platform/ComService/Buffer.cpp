@@ -191,7 +191,7 @@ BOOL CBuffer::Read(void* pData, DWORD nLength)
 	
 	return TRUE;
 }
-#if 0
+#ifdef WIN32
 ///////////////////////////////////////////////////////////////////////////////
 // CBuffer read string helper
 
@@ -241,7 +241,51 @@ BOOL CBuffer::ReadLine(CString& strLine, UINT nCodePage, BOOL bPeek)
 
 	return TRUE;
 }
+#else
+///////////////////////////////////////////////////////////////////////////////
+// CBuffer read string helper
 
+CString CBuffer::ReadString(DWORD nBytes)
+{
+	int nLength = (int)__min( nBytes, m_nLength );
+
+	LPWSTR pszWide = new WCHAR[ nLength + 1 ];
+	::mbstowcs( pszWide, (LPCSTR)m_pBuffer, nLength );
+
+	CString str( pszWide );
+	delete [] pszWide;
+
+	Remove( nBytes );
+	return str;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// CBuffer read line helper
+
+BOOL CBuffer::ReadLine(CString& strLine, BOOL bPeek)
+{
+	strLine.Empty();
+
+	DWORD nLength; for ( nLength = 0 ; nLength < m_nLength ; nLength++ )
+	{
+		if ( m_pBuffer[ nLength ] == '\n' ) break;
+	}
+
+	if ( nLength >= m_nLength ) return FALSE;
+
+	LPWSTR pszWide = new WCHAR[ nLength + 1 ];
+    ::mbstowcs( pszWide, (LPCSTR)m_pBuffer, nLength );
+
+	strLine = CString( pszWide ); delete [] pszWide;
+
+	int nCR = strLine.ReverseFind( '\r' );
+	if ( nCR >= 0 ) strLine = strLine.Left( nCR );
+
+	if ( ! bPeek ) Remove( nLength + 1 );
+
+	return TRUE;
+}
+#endif // WIN32
 ///////////////////////////////////////////////////////////////////////////////
 // CBuffer starts with helper
 
@@ -255,4 +299,3 @@ BOOL CBuffer::StartsWith(LPCSTR pszString, DWORD nLength, BOOL bRemove) throw()
 
 	return TRUE;
 }
-#endif
