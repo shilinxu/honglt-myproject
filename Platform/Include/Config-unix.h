@@ -45,22 +45,31 @@ typedef /* [string] */ const WCHAR *LPCWSTR;
 /* string macros */
 
 #ifdef UNICODE
-#define TCHAR       WCHAR
-#define LPTSTR      LPWSTR
-#define LPCTSTR     LPCWSTR
+#define TCHAR           WCHAR
+#define LPTSTR          LPWSTR
+#define LPCTSTR         LPCWSTR
 #else
-#define TCHAR       CHAR
-#define LPTSTR      LPSTR
-#define LPCTSTR     LPCSTR
+#define TCHAR           CHAR
+#define LPTSTR          LPSTR
+#define LPCTSTR         LPCSTR
 #endif // UNICODE
 
 #ifdef UNICODE
-#define lstrlen     wcslen
-#define _stprintf   swprintf
+#define lstrlen         wcslen
+#define _stprintf       swprintf
+#define _sntprintf      snwprintf
+
+#define __TEXT(quote)   L##quote
+
 #else
-#define lstrlen     strlen
-#define _stprintf   sprintf
+#define lstrlen         strlen
+#define _stprintf       sprintf
+#define _sntprintf      snprintf
+
+#define __TEXT(quote)   quote
 #endif // UNICODE
+
+#define TEXT(quote) __TEXT(quote)
 
 /* Minimum and maximum macros */
 

@@ -265,7 +265,7 @@ WORD CXOREncrypt::EncryptData(LPCTSTR pszSrcData, LPTSTR pszEncrypData, WORD wSi
 	//生成密钥
 	unsigned char szRandKey[ENCRYPT_KEY_LEN];
 	szRandKey[0]=lstrlen(pszSrcData);
-	for (i=1;i<CountArray(szRandKey);i++) szRandKey[i]=rand()%255;
+	for (i=1; i<sizeof(szRandKey); i++) szRandKey[i]=rand()%255;
 
 	//生成密文
 	BYTE bTempCode=0;
