@@ -2,8 +2,8 @@
 // Sysdefs.h
 //
 
-#ifndef _SYSDEFS__INCLUDED_
-#define _SYSDEFS__INCLUDED_
+#ifndef _INC_SYSDEFS
+#define _INC_SYSDEFS
 
 //
 // Configuration
@@ -16,6 +16,7 @@
 //
 
 #ifndef WIN32
+
 typedef bool BOOL;
 
 typedef unsigned char BYTE;
@@ -42,14 +43,12 @@ typedef /* [string] */ const WCHAR *LPCWSTR;
 #ifndef TRUE
 #define TRUE    1
 #endif // FALSE
+
 #endif // WIN32
 
-#ifndef _TCHAR
-#define _TCHAR
-#endif // _TCHAR
-
-#ifdef _TCHAR
 /* string macros */
+
+#ifndef _INC_TCHAR
 
 #ifdef UNICODE
 #define TCHAR           WCHAR
@@ -77,9 +76,12 @@ typedef /* [string] */ const WCHAR *LPCWSTR;
 #endif // UNICODE
 
 #define TEXT(quote) __TEXT(quote)
-#endif // _TCHAR
+
+#endif // _INC_TCHAR
 
 /* Minimum and maximum macros */
+
+#ifndef WIN32
 
 #define __max(a,b)  (((a) > (b)) ? (a) : (b))
 #define __min(a,b)  (((a) < (b)) ? (a) : (b))
@@ -89,6 +91,8 @@ typedef /* [string] */ const WCHAR *LPCWSTR;
 #define FillMemory(Destination,Length,Fill) memset((Destination),(Fill),(Length))
 #define ZeroMemory(Destination,Length) memset((Destination),0,(Length))
 
+#endif // WIN32
+
 //
 // 64-bit type
 //
@@ -96,21 +100,11 @@ typedef /* [string] */ const WCHAR *LPCWSTR;
 typedef long LONG_PTR, *PLONG_PTR;
 typedef unsigned long ULONG_PTR, *PULONG_PTR;
 typedef ULONG_PTR DWORD_PTR, *PDWORD_PTR;
-typedef long long __int64;
 typedef unsigned long long QWORD;
 
-//
-// Debug assert
-//
+#ifndef WIN32
+typedef long long __int64;
+#endif // WIN32
 
-#ifndef ASSERT
-    #include <assert.h>
-    #define ASSERT(f) assert((f))
-#endif
-
-#ifndef VERIFY
-    #define VERIFY(f)
-#endif
-
-#endif // _SYSDEFS__INCLUDED_
+#endif // _INC_SYSDEFS
 
