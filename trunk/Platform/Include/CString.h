@@ -9,9 +9,9 @@
 // Compiler
 //
 
-#if defined (WIN32) || defined (_WIN32_WCE)
-#error CString custom not supported.
-#endif
+// #if defined (WIN32) || defined (_WIN32_WCE)
+// #error CString custom not supported.
+// #endif
 
 //
 // Definitions
@@ -20,7 +20,7 @@
 #include <string>
 #include <string.h>
 
-#include "alloca.h"
+#include <malloc.h>
 
 #pragma pack(push,8)
 
