@@ -1,0 +1,5 @@
+SCC = This is a Source Code Control file
+
+[MakeReport.dsp]
+SCC_Aux_Path = "\\192.168.0.18\vss\"
+SCC_Project_Name = "$/DataCenter/MakeReport", CCBAAAAA
