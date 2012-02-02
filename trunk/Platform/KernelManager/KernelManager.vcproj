@@ -77,7 +77,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Ws2_32.lib ComService.lib"
+				AdditionalDependencies="Ws2_32.lib"
 				OutputFile="../Bin/KernelManager.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -173,7 +173,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Ws2_32.lib ComServiceD.lib"
+				AdditionalDependencies="Ws2_32.lib"
 				OutputFile="../Bin/KernelManagerD.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"

@@ -106,7 +106,7 @@ BOOL CTransferManager::StopService()
 
 	m_bThread = FALSE; SetEvent( m_hWakeup );
 
-	StopThread(); CompleteCleanup();
+	StopThread(); PostCleanup();
 
 	for ( INT_PTR i = 0; i < m_pTransferThreadArray.GetCount(); i++ )
 	{
