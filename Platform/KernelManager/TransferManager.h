@@ -41,7 +41,7 @@ public:
 protected:
 	virtual	BOOL	DoRun();
 protected:
-	void			CompleteCleanup();
+	void			PostCleanup();
 };
 
 class CTransferThread : public CServiceThread
