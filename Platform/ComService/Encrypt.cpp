@@ -2,7 +2,7 @@
 // Encrypt.cpp
 //
 
-#include "ComService.h"
+#include "stdafx.h"
 #include "Encrypt.h"
 
 #define ENCRYPT_KEY_LEN			5	//密钥长度
@@ -243,12 +243,12 @@ void CMD5Encrypt::EncryptData(LPCSTR pszSrcData, CHAR szMD5Result[16])
 	//加密密文
 	CMD5 MD5Encrypt;
 	UCHAR szResult[16];
-	MD5Encrypt.MD5Update((unsigned char *)pszSrcData,lstrlen(pszSrcData)*sizeof(CHAR));
+	MD5Encrypt.MD5Update((unsigned char *)pszSrcData,strlen(pszSrcData)*sizeof(CHAR));
 	MD5Encrypt.MD5Final(szResult);
 
 	//输出结果
 	szMD5Result[0]=0;
-	for (int i=0;i<16;i++) _stprintf(&szMD5Result[i*2],"%02x",szResult[i]);
+	for (int i=0;i<16;i++) sprintf(&szMD5Result[i*2],"%02x",szResult[i]);
 
 	return;
 }

@@ -2,7 +2,7 @@
 // Buffer.cpp
 //
 
-#include "ComService.h"
+#include "stdafx.h"
 #include "Buffer.h"
 
 #define BLOCK_SIZE			1024
