@@ -39,30 +39,19 @@ typedef unsigned long ULONG_PTR, *PULONG_PTR;
 typedef ULONG_PTR DWORD_PTR, *PDWORD_PTR;
 
 //
-// WIN32
-//
-
-#include <afx.h>
-#include <afxole.h>					// MFC OLE
-#include <windows.h>
-#include <winsock2.h>				// Windows sockets V2
-
-//
 // Utility
 //
 
 #define Platform_Proper_Export  __declspec(dllexport)
 #define Platform_Proper_Import  __declspec(dllimport)
 
-#if defined (AKM_EXPORT) && !defined (AKM_Export)
-#define AKM_Export __declspec (dllexport)
-#else
-#define AKM_Import __declspec (dllimport)
-#define AKM_Export AKM_Import
-#endif // AKM_EXPORT && !AKM_Export
+//
+// Debug assert
+//
 
-#if defined (AKM_EXPORT) && !defined (_WINDLL)
-#define _WINDLL
-#endif // AKM_EXPORT && !_WINDLL
+#ifndef ASSERT
+#include <assert.h>
+#define ASSERT(f) assert((f))
+#endif
 
 #endif // !defined (CONFIG_WIN32_H__INCLUDED_)
